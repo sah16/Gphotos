@@ -1,69 +1,132 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import { useState } from 'react';
+import styles from './page.module.css';
+import { Photo } from '@/lib/retrieval';
+import { Chip } from '@/lib/chips';
+
+import Header from '@/components/Header';
+import SummaryLine from '@/components/SummaryLine';
+import ChipRow from '@/components/ChipRow';
+import ResultCountLine from '@/components/ResultCountLine';
+import PhotoGrid from '@/components/PhotoGrid';
+import RelatedRow from '@/components/RelatedRow';
+import SearchBar from '@/components/SearchBar';
 
 export default function Home() {
+  const [query, setQuery] = useState('');
+  const [activeQuery, setActiveQuery] = useState('');
+  const [selectedChips, setSelectedChips] = useState<string[]>([]);
+  const [results, setResults] = useState<Photo[]>([]);
+  const [chips, setChips] = useState<Chip[]>([]);
+  const [hasSearched, setHasSearched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const performSearch = async (newQuery: string, chipsToUse: string[] = []) => {
+    setIsLoading(true);
+    try {
+      const endpoint = chipsToUse.length > 0 ? '/api/refine' : '/api/search';
+      const body = chipsToUse.length > 0 
+        ? { query: newQuery, selectedChips: chipsToUse }
+        : { query: newQuery };
+        
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      
+      if (!res.ok) throw new Error('Search failed');
+      
+      const data = await res.json();
+      setResults(data.results || []);
+      setChips(data.chips || []);
+      setActiveQuery(newQuery);
+      setHasSearched(true);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    setSelectedChips([]);
+    performSearch(query, []);
+  };
+
+  const handleChipToggle = (chipLabel: string) => {
+    const newChips = selectedChips.includes(chipLabel)
+      ? selectedChips.filter(c => c !== chipLabel)
+      : [...selectedChips, chipLabel];
+    
+    setSelectedChips(newChips);
+    performSearch(activeQuery, newChips);
+  };
+
+  const handleClearClues = () => {
+    setSelectedChips([]);
+    performSearch(activeQuery, []);
+  };
+
+  const handleBack = () => {
+    setHasSearched(false);
+    setQuery('');
+    setActiveQuery('');
+    setSelectedChips([]);
+    setResults([]);
+    setChips([]);
+  };
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+    <div className={styles.container}>
+      {hasSearched ? (
+        <div className={styles.resultsScreen}>
+          <Header title={activeQuery} onBack={handleBack} />
+          <div className={styles.scrollableContent}>
+            <SummaryLine query={activeQuery} selectedChips={selectedChips} />
+            <ChipRow 
+              chips={chips} 
+              selectedChips={selectedChips} 
+              onToggle={handleChipToggle} 
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            {isLoading ? (
+               <div className={styles.loading}>Loading results...</div>
+            ) : (
+               <>
+                 <ResultCountLine 
+                   count={results.length} 
+                   cluesCount={selectedChips.length} 
+                   onClearClues={handleClearClues} 
+                 />
+                 <PhotoGrid photos={results} />
+                 <RelatedRow />
+               </>
+            )}
+          </div>
+          <SearchBar 
+            query={query} 
+            setQuery={setQuery} 
+            onSubmit={handleSearchSubmit} 
+            placeholder="Nothing fits? Type your own clue"
+          />
         </div>
-      </main>
+      ) : (
+        <div className={styles.initialScreen}>
+          <div className={styles.homeContent}>
+             <div className={styles.logo}>Google Photos MVP</div>
+             <p className={styles.homePrompt}>Search for photos, people, or places</p>
+          </div>
+          <SearchBar 
+            query={query} 
+            setQuery={setQuery} 
+            onSubmit={handleSearchSubmit} 
+            placeholder="Search or follow up"
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -90,12 +90,18 @@ just filtering the currently visible grid.
 - **"Database":** a single static JSON file (e.g. `/data/photos.json`)
   holding, per photo: file reference, AI-generated caption, detected
   attribute tags, and a precomputed embedding of the caption.
-- **Photo corpus:** 200-300 free stock images pulled via the Pexels API
-  (primary, 200 req/hour free) and/or Unsplash API (secondary, 50
-  req/hour free), sourced across themed queries (beach/outdoor, cafes,
-  birthday/festival, group photos, pets, documents, street scenes). API
-  keys will be supplied before the seeding step — leave placeholders
-  (`PEXELS_API_KEY`, `UNSPLASH_ACCESS_KEY`) in env config until then.
+- **Photo corpus:** 200-300 free stock images pulled via the Pixabay API
+  (primary — free, self-serve key shown on the logged-in API docs page,
+  no approval wait, 100 req/minute) and/or Unsplash API (secondary,
+  approval-gated, 50 req/hour free once granted — treat as optional,
+  don't block the build on it), sourced across themed queries
+  (beach/outdoor, cafes, birthday/festival, group photos, pets,
+  documents, street scenes). Note Pixabay's response shape differs from
+  a typical stock-photo API — image URLs come back as `webformatURL` /
+  `largeImageURL`, and `tags` is a single comma-separated string, not an
+  array — parse accordingly. API keys will be supplied before the
+  seeding step — leave placeholders (`PIXABAY_API_KEY`,
+  `UNSPLASH_ACCESS_KEY`) in env config until then.
 - **AI model: Groq** (free tier).
   - *Offline tagging* (run once, pre-deploy): send each photo to a
     currently-live Groq vision-capable model to generate a caption plus

@@ -36,16 +36,19 @@ matching the themed categories from `problem_statement.md` §5.
 
 **Tasks:**
 - Implement `scripts/seed-photos.js`.
-- Query Pexels API (primary) across themed searches: beach/outdoor,
-  cafes, birthday/festival, group photos, pets, documents, street
-  scenes.
-- Supplement with Unsplash API where Pexels results are thin for a given
-  theme (mind its lower 50 req/hour limit).
+- Query Pixabay API (primary — self-serve key, no approval wait) across
+  themed searches: beach/outdoor, cafes, birthday/festival, group
+  photos, pets, documents, street scenes. Note its response shape:
+  `webformatURL`/`largeImageURL` for images, `tags` as a comma-separated
+  string.
+- Supplement with Unsplash API where available (optional — approval-
+  gated; don't block this phase on it, mind its 50 req/hour limit if
+  granted).
 - Save images to `/public/photos/`, and write a plain manifest (id,
   filename, source, theme) — this manifest feeds Phase 3.
 
-**Inputs needed:** `PEXELS_API_KEY` (and `UNSPLASH_ACCESS_KEY` if used)
-— supplied by the case author before this phase starts.
+**Inputs needed:** `PIXABAY_API_KEY` (and `UNSPLASH_ACCESS_KEY` if/when
+approved) — supplied by the case author before this phase starts.
 
 **Exit criteria:** `/public/photos/` contains 200-300 images spanning
 all listed themes, with a manifest file listing each one. No tagging or
@@ -151,7 +154,7 @@ local dev environment (`next dev`), not yet deployed.
 
 **Tasks:**
 - Set `GROQ_API_KEY` in the Vercel project's environment variables
-  (`PEXELS_API_KEY`/`UNSPLASH_ACCESS_KEY` are not needed in production —
+  (`PIXABAY_API_KEY`/`UNSPLASH_ACCESS_KEY` are not needed in production —
   seeding is a local, one-time step).
 - Deploy to Vercel; confirm `/data/photos.json` and `/public/photos` are
   committed and served correctly.

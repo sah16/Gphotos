@@ -11,7 +11,7 @@ the "how": components, data flow, folder structure, and deployment.
                      │   before deploy)         │
                      │                          │
                      │  1. Seed photo corpus    │
-                     │     (Pexels/Unsplash)    │
+                     │     (Pixabay/Unsplash)   │
                      │  2. Tag each photo       │
                      │     (Groq vision model)  │
                      │  3. Build embeddings     │
@@ -72,10 +72,14 @@ project. There is no separate backend service and no database server.
 
 ### 2.4 Offline pipeline (`/scripts`, run locally by the developer before
 deploy — not part of the deployed app)
-- `scripts/seed-photos.js` (or `.ts`) — calls Pexels API (primary) and
-  Unsplash API (secondary) across the themed queries listed in
-  `problem_statement.md` §5, downloads 200-300 images into
-  `/public/photos/`.
+- `scripts/seed-photos.js` (or `.ts`) — calls Pixabay API (primary) and
+  Unsplash API (secondary, optional — approval-gated, don't block on it)
+  across the themed queries listed in `problem_statement.md` §5,
+  downloads 200-300 images into `/public/photos/`. Pixabay's response
+  shape differs from a typical stock-photo API: image URLs are
+  `webformatURL`/`largeImageURL`, and `tags` is a comma-separated
+  string, not an array — parse accordingly, don't assume the shape used
+  for any other source.
 - `scripts/tag-photos.js` — for each downloaded photo, calls a
   currently-live Groq vision-capable model (verify against
   `console.groq.com/docs/models` — do not hardcode an unverified model
@@ -92,7 +96,7 @@ deploy — not part of the deployed app)
   once locally and commit the resulting JSON.
 
 ### 2.5 External services
-- **Pexels API / Unsplash API** — offline only, photo sourcing.
+- **Pixabay API / Unsplash API** — offline only, photo sourcing.
 - **Groq API** — offline (vision tagging) and online (live query
   normalization / chip-relevance scoring at request time).
 
@@ -191,7 +195,7 @@ the frontend as-is.
 - One Vercel project, connected to the repo. Framework preset: Next.js
   (auto-detected).
 - Environment variables set in Vercel dashboard: `GROQ_API_KEY` (needed
-  at runtime for live query/chip scoring), `PEXELS_API_KEY` /
+  at runtime for live query/chip scoring), `PIXABAY_API_KEY` /
   `UNSPLASH_ACCESS_KEY` (only needed locally, for re-running the offline
   seeding scripts — not required by the deployed app itself, since
   `/data/photos.json` and `/public/photos` are already committed).

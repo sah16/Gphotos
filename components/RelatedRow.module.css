@@ -1,0 +1,37 @@
+.relatedSection {
+  padding: 24px 16px;
+}
+
+.relatedTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--foreground);
+}
+
+.relatedRow {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.relatedRow::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.relatedChip {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid #5f6368;
+  border-radius: 16px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.relatedChip:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}

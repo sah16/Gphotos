@@ -1,0 +1,22 @@
+.resultCountLine {
+  font-size: 0.85rem;
+  color: #9aa0a6;
+  padding: 0 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clearBtn {
+  background: none;
+  border: none;
+  color: #8ab4f8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.clearBtn:hover {
+  text-decoration: underline;
+}

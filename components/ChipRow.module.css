@@ -1,0 +1,54 @@
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.chip {
+  background-color: #303134;
+  color: #e8eaed;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.chip:hover {
+  background-color: #3c4043;
+}
+
+.chip.selected {
+  background-color: #d2e3fc;
+  color: #1967d2;
+  border-color: #d2e3fc;
+}
+
+.count {
+  color: #9aa0a6;
+  font-size: 0.8rem;
+}
+
+.chip.selected .count {
+  color: #1967d2;
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  color: #8ab4f8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 8px;
+  font-weight: 500;
+}
+
+.toggleBtn:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,216 @@
+# Architecture — AI-Native Retrieval MVP
+
+Companion to `problem_statement.md` (the "what"). This document covers
+the "how": components, data flow, folder structure, and deployment.
+
+## 1. System overview
+
+```
+                     ┌─────────────────────────┐
+                     │   OFFLINE (run once,     │
+                     │   before deploy)         │
+                     │                          │
+                     │  1. Seed photo corpus    │
+                     │     (Pexels/Unsplash)    │
+                     │  2. Tag each photo       │
+                     │     (Groq vision model)  │
+                     │  3. Build embeddings     │
+                     │  4. Write photos.json    │
+                     └────────────┬─────────────┘
+                                  │
+                                  ▼
+                     ┌─────────────────────────┐
+                     │   /data/photos.json      │
+                     │   (static data layer)    │
+                     └────────────┬─────────────┘
+                                  │ read at request time
+                                  ▼
+┌──────────────┐   HTTP    ┌─────────────────────────┐
+│  Next.js      │ ───────▶ │  Next.js API routes      │
+│  frontend      │          │  /api/search             │
+│  (browser)     │ ◀─────── │  /api/refine             │
+└──────────────┘   JSON    └────────────┬─────────────┘
+                                  │ live calls
+                                  ▼
+                     ┌─────────────────────────┐
+                     │   Groq API (text model)  │
+                     │   query normalization /  │
+                     │   chip scoring           │
+                     └─────────────────────────┘
+```
+
+Everything runs inside one Next.js project, deployed as one Vercel
+project. There is no separate backend service and no database server.
+
+## 2. Components
+
+### 2.1 Frontend (`/app` or `/pages`, browser-rendered)
+- Home/results screen matching the reference screenshots: header, query
+  title, running summary line, chip row, result-count line, photo grid,
+  untouched "Related" date-chip row, bottom search/follow-up input.
+- State held client-side: current query string, set of selected chip
+  labels, current results, current chip list. No server-side session.
+- On mount / query submit → calls `POST /api/search`.
+- On chip tap / clear → calls `POST /api/refine`.
+
+### 2.2 API layer (Next.js API routes — the "backend")
+- `POST /api/search` — see contract in `problem_statement.md` §6.
+- `POST /api/refine` — see contract in `problem_statement.md` §6.
+- Both routes: load `/data/photos.json` into memory (cached across
+  invocations where the runtime allows), score all photos against the
+  query (+ selected chips for `/refine`), return top results and ranked
+  chips. No writes ever happen to this file at request time — it is
+  read-only at runtime.
+
+### 2.3 Data layer
+- `/data/photos.json` — array of tagged photo records (schema in §5).
+  Generated entirely offline; treated as a build artifact, committed to
+  the repo like any other static asset.
+- No external database. This keeps the whole system deployable as a
+  single static-plus-serverless Vercel project with nothing to
+  provision.
+
+### 2.4 Offline pipeline (`/scripts`, run locally by the developer before
+deploy — not part of the deployed app)
+- `scripts/seed-photos.js` (or `.ts`) — calls Pexels API (primary) and
+  Unsplash API (secondary) across the themed queries listed in
+  `problem_statement.md` §5, downloads 200-300 images into
+  `/public/photos/`.
+- `scripts/tag-photos.js` — for each downloaded photo, calls a
+  currently-live Groq vision-capable model (verify against
+  `console.groq.com/docs/models` — do not hardcode an unverified model
+  name) to produce a caption and structured attribute tags.
+- `scripts/embed-photos.js` — builds a similarity representation per
+  photo from its caption/tags (a real embedding if a Groq or other free
+  embedding endpoint is available; otherwise a TF-IDF/keyword-overlap
+  vector is an acceptable substitute at this corpus size).
+- `scripts/build-dataset.js` — merges the above into the final
+  `/data/photos.json`.
+- These scripts are run manually (`node scripts/...`) during setup, not
+  triggered by user traffic, and not part of the Vercel build step
+  unless you choose to wire them into `postinstall` — safer to run them
+  once locally and commit the resulting JSON.
+
+### 2.5 External services
+- **Pexels API / Unsplash API** — offline only, photo sourcing.
+- **Groq API** — offline (vision tagging) and online (live query
+  normalization / chip-relevance scoring at request time).
+
+## 3. Request-time sequence
+
+### 3.1 Initial search
+1. User submits a query in the frontend.
+2. Frontend calls `POST /api/search { query }`.
+3. Route loads `photos.json`, scores every photo against the query
+   (similarity over caption/tag embeddings; optionally normalized via a
+   quick Groq text-model call first).
+4. Route selects the top candidate pool (e.g. top 30-50 by score).
+5. From that pool, route computes attribute frequency across all
+   detected tags, filters out near-universal (~95%+) and near-unique
+   (single-photo) tags, ranks the rest by how evenly they split the
+   pool, and returns the top chips (with `matchCount` per chip).
+6. Route returns the visible slice of results (e.g. top 6-12 of the
+   pool) plus the ranked chip list.
+7. Frontend renders: summary line ("Searching for: {query}"), chips with
+   counts, result-count line, grid with a "best match" badge on the
+   top-ranked result.
+
+### 3.2 Refine (chip tap)
+1. User taps a chip (or several).
+2. Frontend calls `POST /api/refine { query, selectedChips }`.
+3. Route re-scores the full photo set using the original query text
+   combined with the selected chip labels as additional signal (not a
+   filter of the previous response's result list — this must re-touch
+   the full candidate pool, since the target photo may not have been in
+   the previously visible slice).
+4. Route re-ranks remaining/relevant chips (already-selected chips
+   should not reappear as unselected options) and returns updated
+   results + chips + counts.
+5. Frontend updates the summary line, chip row, result-count line, and
+   grid together.
+
+### 3.3 Clear clues
+1. User taps "Clear clues".
+2. Frontend re-calls `POST /api/search` with the original query and no
+   selected chips, restoring the initial state.
+
+## 4. Folder structure (suggested)
+
+```
+/app                      # Next.js app router pages
+  /api/search/route.ts
+  /api/refine/route.ts
+  /page.tsx                # main results screen
+/components
+  SearchBar.tsx
+  SummaryLine.tsx
+  ChipRow.tsx
+  ResultCountLine.tsx
+  PhotoGrid.tsx
+  RelatedRow.tsx            # existing date-chip row, left as-is
+/lib
+  retrieval.ts              # scoring/ranking logic shared by both routes
+  chips.ts                  # chip selection/ranking logic
+  groq.ts                   # Groq API client helpers
+/data
+  photos.json                # generated by offline pipeline, committed
+/scripts
+  seed-photos.js
+  tag-photos.js
+  embed-photos.js
+  build-dataset.js
+/public/photos                # downloaded demo images
+.env.local.example            # PEXELS_API_KEY, UNSPLASH_ACCESS_KEY, GROQ_API_KEY placeholders
+```
+
+## 5. Data models (canonical — matches `problem_statement.md` §6)
+
+```ts
+type Photo = {
+  id: string;
+  imageUrl: string;
+  caption: string;
+  tags: string[];
+  date: string;
+  isBestMatch: boolean;
+};
+
+type Chip = {
+  label: string;
+  matchCount: number;
+};
+```
+
+`photos.json` stores `Photo` records plus one additional offline-only
+field, `embedding: number[]` (or `tagVector` if using TF-IDF instead of
+a true embedding) — used for scoring at request time but not sent to
+the frontend as-is.
+
+## 6. Deployment (Vercel)
+
+- One Vercel project, connected to the repo. Framework preset: Next.js
+  (auto-detected).
+- Environment variables set in Vercel dashboard: `GROQ_API_KEY` (needed
+  at runtime for live query/chip scoring), `PEXELS_API_KEY` /
+  `UNSPLASH_ACCESS_KEY` (only needed locally, for re-running the offline
+  seeding scripts — not required by the deployed app itself, since
+  `/data/photos.json` and `/public/photos` are already committed).
+- No database, no separate server, no Docker — a standard Vercel
+  Next.js deploy covers the entire system.
+- Build step: standard `next build`. The offline pipeline scripts are
+  **not** run during Vercel's build — they are a one-time local step
+  whose output (`photos.json`, `/public/photos`) is committed before
+  deploying.
+
+## 7. Non-functional notes
+
+- At 200-300 photos, in-memory scoring on every request is fast enough
+  with no caching needed; if it becomes a bottleneck, cache the parsed
+  `photos.json` at module scope so it's not re-read from disk on every
+  invocation.
+- Groq free-tier rate limits are more than sufficient for a 1-3 person
+  usability test; the only place volume matters is the one-time offline
+  tagging pass over 200-300 photos, which should be paced (e.g. small
+  delay between calls) to stay under per-minute limits.
+- No authentication, sessions, or persistence of user queries across
+  visits is required for this MVP.

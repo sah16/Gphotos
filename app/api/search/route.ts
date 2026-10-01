@@ -28,7 +28,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       results: visibleResults,
-      chips: topChips
+      chips: topChips,
+      totalMatches: candidatePool.length
     });
   } catch (error) {
     console.error('Search API Error:', error);

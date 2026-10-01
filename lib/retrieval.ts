@@ -17,27 +17,38 @@ export function tokenize(text: string): string[] {
 export function scorePhoto(photo: Photo, queryTokens: string[]): number {
   let score = 0;
   
-  if (queryTokens.length === 0) return 1;
+  if (queryTokens.length === 0) return 0;
 
-  const photoVector = photo.tagVector || [];
-  const photoVectorSet = new Set(photoVector);
+  const photoVectorSet = new Set(photo.tagVector || []);
   const photoTags = photo.tags.map(t => t.toLowerCase());
+  const caption = photo.caption.toLowerCase();
 
   for (const token of queryTokens) {
-    if (photoVectorSet.has(token)) {
-      score += 1;
-    } else {
-      for (const v of photoVector) {
+    let tokenScore = 0;
+    
+    // Exact tag match (very strong signal)
+    if (photoTags.some(t => t === token || t.includes(token))) {
+       tokenScore += 5;
+    } 
+    // Exact word match in caption (strong signal)
+    else if (caption.match(new RegExp(`\\b${token}\\b`))) {
+       tokenScore += 3;
+    }
+    // Tag vector (TF-IDF/keyword overlap) exact match
+    else if (photoVectorSet.has(token)) {
+      tokenScore += 2;
+    } 
+    // Partial substring match in tag vector (weakest signal)
+    else {
+      for (const v of photoVectorSet) {
         if (v.includes(token) || token.includes(v)) {
-           score += 0.5;
+           tokenScore += 0.5;
            break;
         }
       }
     }
     
-    if (photoTags.some(t => t.includes(token))) {
-       score += 1;
-    }
+    score += tokenScore;
   }
 
   return score;
@@ -49,10 +60,12 @@ export function retrievePhotos(queryTokens: string[]): Photo[] {
     score: scorePhoto(photo, queryTokens)
   }));
 
+  const THRESHOLD = 3; // Strict relevance threshold
+  
   const hasClues = queryTokens.length > 0;
   const candidates = hasClues 
-    ? scoredPhotos.filter(p => p.score > 0)
-    : scoredPhotos;
+    ? scoredPhotos.filter(p => p.score >= THRESHOLD)
+    : scoredPhotos.slice(0, 50); // fallback if no query
 
   candidates.sort((a, b) => b.score - a.score);
 

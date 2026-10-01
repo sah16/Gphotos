@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     }
 
     const queryTokens = await normalizeQuery(query);
-    const candidatePool = retrievePhotos(queryTokens, []);
+    const candidatePool = retrievePhotos(queryTokens);
     const topChips = getTopChips(candidatePool, []);
 
     // Take top 12 for the visible grid as requested in typical scenarios

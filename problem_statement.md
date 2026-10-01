@@ -124,8 +124,12 @@ just filtering the currently visible grid.
 - `POST /api/refine`
   Input: `{ query: string, selectedChips: string[] }`
   Output: `{ results: Photo[], chips: Chip[] }`
-  Re-runs retrieval using the original query plus selected chip terms;
-  already-selected chips should not reappear as unselected options.
+  Recomputes the original query's candidate pool, then filters it to
+  only photos matching **all** selected chips (AND, not a standalone
+  chip search), then re-ranks survivors by original query-similarity.
+  Result count must only shrink or stay level as chips are added, never
+  grow — see `architecture.md` §3.2 for the exact algorithm.
+  Already-selected chips should not reappear as unselected options.
 
 `Photo`: `{ id, imageUrl, caption, tags: string[], date, isBestMatch: boolean }`
 `Chip`: `{ label: string, matchCount: number }`

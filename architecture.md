@@ -122,16 +122,33 @@ deploy — not part of the deployed app)
 ### 3.2 Refine (chip tap)
 1. User taps a chip (or several).
 2. Frontend calls `POST /api/refine { query, selectedChips }`.
-3. Route re-scores the full photo set using the original query text
-   combined with the selected chip labels as additional signal (not a
-   filter of the previous response's result list — this must re-touch
-   the full candidate pool, since the target photo may not have been in
-   the previously visible slice).
-4. Route re-ranks remaining/relevant chips (already-selected chips
-   should not reappear as unselected options) and returns updated
-   results + chips + counts.
-5. Frontend updates the summary line, chip row, result-count line, and
+3. Route recomputes the **original query's** similarity-ranked candidate
+   pool across the full photo set — identical scoring logic to
+   `/api/search`, re-run fresh each time (this must re-touch the full
+   photo set, not just the previously visible slice, since the target
+   photo may not have been in the previously visible results).
+4. Route then **filters** that query-ranked pool down to only photos
+   whose tags include **every** currently selected chip (AND logic
+   across chips — a photo needs all selected tags to survive, not just
+   one). Chips **narrow** the original query; they never replace it or
+   run as a standalone tag search on their own.
+5. Route re-ranks the surviving, filtered photos by their original
+   query-similarity score (from step 3) — chip selection filters which
+   photos are eligible, it does not re-order by chip relevance.
+6. From this narrowed pool, route recomputes chip frequency/ranking the
+   same way `/api/search` does for its initial pool (already-selected
+   chips should not reappear as unselected options).
+7. Route returns the updated results + chips + counts.
+8. Frontend updates the summary line, chip row, result-count line, and
    grid together.
+
+   **Correctness check:** result count must only stay the same or
+   shrink as more chips are selected (set intersection) — it must never
+   grow, and results must always remain thematically connected to the
+   original query. If tapping a chip returns photos unrelated to the
+   original query, the implementation is incorrectly treating the chip
+   as a standalone search instead of a filter on the query's candidate
+   pool — re-check step 3-4 above.
 
 ### 3.3 Clear clues
 1. User taps "Clear clues".

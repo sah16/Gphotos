@@ -13,11 +13,30 @@ export async function POST(request: Request) {
     }
 
     const queryTokens = await normalizeQuery(query);
-    const candidatePool = retrievePhotos(queryTokens, selectedChips);
-    const topChips = getTopChips(candidatePool, selectedChips);
+    
+    // 1. Recompute original candidate pool
+    const candidatePool = retrievePhotos(queryTokens);
+    
+    // 2. Filter pool down (AND logic across chips)
+    let filteredPool = candidatePool;
+    if (selectedChips.length > 0) {
+      const chipSet = new Set(selectedChips.map(c => c.toLowerCase().trim()));
+      
+      filteredPool = candidatePool.filter(photo => {
+        const photoTagsSet = new Set(photo.tags.map(t => t.toLowerCase().trim()));
+        // Photo must contain ALL selected chips
+        for (const chip of chipSet) {
+          if (!photoTagsSet.has(chip)) return false;
+        }
+        return true;
+      });
+    }
+
+    // 3. Recompute chips from the filtered pool
+    const topChips = getTopChips(filteredPool, selectedChips);
 
     // Take top 12 for the visible grid
-    const visibleResults = candidatePool.slice(0, 12).map((p, index) => {
+    const visibleResults = filteredPool.slice(0, 12).map((p, index) => {
       // Create a copy to remove tagVector
       const { tagVector, ...safePhoto } = p;
       return {

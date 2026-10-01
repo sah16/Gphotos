@@ -108,7 +108,18 @@ deploy — not part of the deployed app)
 3. Route loads `photos.json`, scores every photo against the query
    (similarity over caption/tag embeddings; optionally normalized via a
    quick Groq text-model call first).
-4. Route selects the top candidate pool (e.g. top 30-50 by score).
+4. Route selects the candidate pool as photos scoring above a minimum
+   relevance threshold, up to a target size (e.g. top 30-50 by score).
+   **The pool must never be padded with low-relevance photos to reach
+   the target size** — if fewer than the target number of photos clear
+   the threshold, the pool is simply smaller. A query with few truly
+   relevant photos in the corpus (e.g. "birthday image" against a corpus
+   with only a handful of birthday photos) must return a small, relevant
+   pool, not a full-size pool diluted with unrelated photos (e.g. beach/
+   ocean images) just to hit a count target. This threshold needs tuning
+   against the actual corpus and scoring method in use — start
+   conservative and adjust based on spot-checks like the one in §3.1a
+   below.
 5. From that pool, route computes attribute frequency across all
    detected tags, filters out near-universal (~95%+) and near-unique
    (single-photo) tags, ranks the rest by how evenly they split the
@@ -118,6 +129,18 @@ deploy — not part of the deployed app)
 7. Frontend renders: summary line ("Searching for: {query}"), chips with
    counts, result-count line, grid with a "best match" badge on the
    top-ranked result.
+
+   **§3.1a Correctness check:** the result-count line and the chip
+   match-counts must be computed from the *same* candidate pool — if the
+   result count says "12 results" but a chip shows a count of 22, the
+   two are being computed from different pool sizes and must be
+   reconciled. Separately, spot-check that top chips for a query are
+   actually relevant to that query (e.g. "birthday image" should not
+   surface "Ocean" or "Beach" as top chips) — if irrelevant chips
+   dominate, the relevance threshold in step 4 is too loose, or the
+   similarity scoring (embeddings vs. TF-IDF fallback) is matching on
+   generic co-occurring terms rather than real conceptual relevance to
+   the query.
 
 ### 3.2 Refine (chip tap)
 1. User taps a chip (or several).

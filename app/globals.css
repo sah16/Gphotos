@@ -42,8 +42,8 @@ body {
 
 .device-frame {
   --bezel: clamp(6px, min(1.5vh, 1.5vw), 14px);
-  width: min(375px, 90vw, calc(90vh * 375 / 812));
-  aspect-ratio: 375 / 812;
+  width: min(430px, 90vw, calc(90vh * 430 / 932));
+  aspect-ratio: 430 / 932;
   background-color: var(--background);
   border-radius: clamp(24px, min(5vh, 5vw), 48px);
   border: var(--bezel) solid #000000;

@@ -1,7 +1,7 @@
 .chipRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   padding: 0 16px;
   margin-bottom: 16px;
 }
@@ -11,12 +11,12 @@
   color: #e8eaed;
   border: 1px solid transparent;
   border-radius: 16px;
-  padding: 6px 12px;
-  font-size: 0.85rem;
+  padding: 4px 10px;
+  font-size: 0.75rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   transition: all 0.2s;
 }
 
@@ -32,7 +32,7 @@
 
 .count {
   color: #9aa0a6;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .chip.selected .count {

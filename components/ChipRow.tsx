@@ -26,7 +26,7 @@ export default function ChipRow({
           className={`${styles.chip} ${styles.selected}`}
           onClick={() => onToggle(label)}
         >
-          {label}
+          ✓ {label}
         </button>
       ))}
       

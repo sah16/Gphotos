@@ -75,14 +75,14 @@ Read them in that order before making changes.
 ## Verifying it works
 
 Before sharing the deployed link, walk through every item in
-`problem_statement.md` §7 (Definition of done) on the live URL, on a
+`problem_statement.md` §8 (Definition of done) on the live URL, on a
 phone-sized viewport. `implementation_plan.md` Phase 6 covers this in
 detail, including planting a known target photo in the corpus to
 confirm the full search → chip → refine → find flow works end to end.
 
 ## What this MVP deliberately does not do
 
-See `problem_statement.md` §4 for the full list — most notably, this
+See `problem_statement.md` §5 for the full list — most notably, this
 does not connect to a real Google Photos account (Google removed the API
 scope that would allow this in March 2025) and uses a seeded stock-photo
 corpus instead.

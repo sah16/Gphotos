@@ -54,8 +54,8 @@ project. There is no separate backend service and no database server.
 - On chip tap / clear → calls `POST /api/refine`.
 
 ### 2.2 API layer (Next.js API routes — the "backend")
-- `POST /api/search` — see contract in `problem_statement.md` §6.
-- `POST /api/refine` — see contract in `problem_statement.md` §6.
+- `POST /api/search` — see contract in `problem_statement.md` §7.
+- `POST /api/refine` — see contract in `problem_statement.md` §7.
 - Both routes: load `/data/photos.json` into memory (cached across
   invocations where the runtime allows), score all photos against the
   query (+ selected chips for `/refine`), return top results and ranked
@@ -74,7 +74,7 @@ project. There is no separate backend service and no database server.
 deploy — not part of the deployed app)
 - `scripts/seed-photos.js` (or `.ts`) — calls Pixabay API (primary) and
   Unsplash API (secondary, optional — approval-gated, don't block on it)
-  across the themed queries listed in `problem_statement.md` §5,
+  across the themed queries listed in `problem_statement.md` §6,
   downloads 200-300 images into `/public/photos/`. Pixabay's response
   shape differs from a typical stock-photo API: image URLs are
   `webformatURL`/`largeImageURL`, and `tags` is a comma-separated
@@ -207,7 +207,7 @@ deploy — not part of the deployed app)
 .env.local.example            # PEXELS_API_KEY, UNSPLASH_ACCESS_KEY, GROQ_API_KEY placeholders
 ```
 
-## 5. Data models (canonical — matches `problem_statement.md` §6)
+## 5. Data models (canonical — matches `problem_statement.md` §7)
 
 ```ts
 type Photo = {

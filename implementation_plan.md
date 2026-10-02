@@ -32,7 +32,7 @@ at the same time as logic.
 ## Phase 2 — Photo corpus sourcing
 
 **Goal:** 200-300 real stock photos downloaded and stored locally,
-matching the themed categories from `problem_statement.md` §5.
+matching the themed categories from `problem_statement.md` §6.
 
 **Tasks:**
 - Implement `scripts/seed-photos.js`.
@@ -100,7 +100,7 @@ directly (e.g. via curl/Postman), before any UI exists.
   photo) tags, rank the remainder by how evenly they split the pool, and
   return the top chips with `matchCount`.
 - Implement `POST /api/search` per the contract in
-  `problem_statement.md` §6, wiring together retrieval + chip logic.
+  `problem_statement.md` §7, wiring together retrieval + chip logic.
 - Implement `POST /api/refine` per the same contract — re-scores the
   **full** candidate pool using query + selected chip terms (not a
   filter of the prior response), and excludes already-selected chips
@@ -119,11 +119,11 @@ rankings that look sensible on inspection.
 
 ## Phase 5 — Frontend build
 
-**Goal:** the full UI from `problem_statement.md` §2-3, wired live to
+**Goal:** the full UI from `problem_statement.md` §3-4, wired live to
 the Phase 4 API, visually matching the reference screenshots.
 
 **Tasks:**
-- Build the results screen per `problem_statement.md` §2: header with
+- Build the results screen per `problem_statement.md` §3: header with
   back arrow + query title, running "Searching for: …" summary line,
   attribute chip row (in the position of the old description text, with
   match counts, "+N more" / "Show fewer" toggle), result-count line,
@@ -136,7 +136,7 @@ the Phase 4 API, visually matching the reference screenshots.
   reference screenshots as closely as practical.
 - Implement the free-text fallback ("Nothing fits? Type your own clue")
   as a plain re-search in v1 (no conversational logic, per
-  `problem_statement.md` §4).
+  `problem_statement.md` §5).
 
 **Inputs needed:** Phase 4's working API; reference screenshots.
 
@@ -150,7 +150,7 @@ local dev environment (`next dev`), not yet deployed.
 ## Phase 6 — Deploy, end-to-end test & handoff readiness
 
 **Goal:** the deployed MVP satisfies every item in `problem_statement.md`
-§7 (Definition of done), ready for 1-3 real users to test.
+§8 (Definition of done), ready for 1-3 real users to test.
 
 **Tasks:**
 - Set `GROQ_API_KEY` in the Vercel project's environment variables
@@ -164,7 +164,7 @@ local dev environment (`next dev`), not yet deployed.
   chips appear → tapping relevant chip(s) narrows results → target photo
   surfaces with a "best match" badge.
 - Walk through every Definition of done item in `problem_statement.md`
-  §7 on the live URL, on a phone-sized viewport, and check each one off.
+  §8 on the live URL, on a phone-sized viewport, and check each one off.
 - Fix any visual or functional gaps found during this pass before
   considering the MVP ready to hand to test users.
 
@@ -173,6 +173,6 @@ Phase 1.
 
 **Exit criteria:** the deployed public URL, opened fresh on a phone-
 sized screen by someone unfamiliar with the build, satisfies all six
-Definition of done steps in `problem_statement.md` §7. This is the point
+Definition of done steps in `problem_statement.md` §8. This is the point
 at which the MVP is ready for Part 6 of the case (testing with 3+ users
 from the target segment).

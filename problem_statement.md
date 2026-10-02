@@ -11,7 +11,24 @@ collar", "From WhatsApp", "Evening"). Tapping a chip **re-queries**
 (combines the chip as an added clue with the original query) rather than
 just filtering the currently visible grid.
 
-## 2. UI placement (see reference screenshots)
+## 2. Presentation: mobile device frame
+
+The entire app is displayed inside a static mobile device frame (a
+phone-mockup style container) — a rounded-rectangle phone body with
+visible side buttons and a notch/dynamic-island cutout at the top,
+holding the app content at a fixed phone-like aspect ratio (roughly
+9:19.5), centered on the page. The frame is purely decorative chrome
+(CSS/SVG), not a real responsive layout, and must render identically on
+desktop and mobile browsers — this is for demo/grading presentation, not
+an actual mobile deployment. The rest of the page background outside the
+frame is plain/neutral so the phone reads as a distinct object on the
+page. All UI described below (§3 onward) renders inside this fixed
+viewport, scrolling within it if content overflows. Do not add real
+mobile-specific behavior (touch gestures, viewport meta tweaks, etc.)
+beyond what's already specified — this is a visual frame around the same
+web app, nothing more.
+
+## 3. UI placement (see reference screenshots)
 
 - The existing AI-generated text summary/description block (the
   paragraph currently shown under the query title, e.g. "Here are some
@@ -28,7 +45,7 @@ just filtering the currently visible grid.
   bottom "Search or follow up" input) stays as in the reference
   screenshots.
 
-## 3. Chip interaction logic
+## 4. Chip interaction logic
 
 - A running summary line above the chip row shows the original query
   plus every currently selected clue as a breadcrumb, e.g. "Searching
@@ -58,7 +75,7 @@ just filtering the currently visible grid.
   not a client-side filter of the currently visible grid — the target
   photo may not have been in the original visible set at all.
 
-## 4. Explicit scope boundaries
+## 5. Explicit scope boundaries
 
 **In scope:**
 - A working, deployed, shareable web app (mobile-first layout) usable on
@@ -83,7 +100,7 @@ just filtering the currently visible grid.
 - Any conversational/multi-turn logic behind the "Search or follow up"
   box beyond a plain re-search in v1.
 
-## 5. Technical stack
+## 6. Technical stack
 
 - **Frontend + hosting:** Next.js, deployed on Vercel (public URL, no
   separate server; API routes double as the backend).
@@ -115,7 +132,7 @@ just filtering the currently visible grid.
     Groq's free tier, TF-IDF or keyword-overlap similarity over
     captions/tags is an acceptable substitute at this corpus size.
 
-## 6. API contract (Next.js API routes)
+## 7. API contract (Next.js API routes)
 
 - `POST /api/search`
   Input: `{ query: string }`
@@ -134,7 +151,7 @@ just filtering the currently visible grid.
 `Photo`: `{ id, imageUrl, caption, tags: string[], date, isBestMatch: boolean }`
 `Chip`: `{ label: string, matchCount: number }`
 
-## 7. Definition of done
+## 8. Definition of done
 
 A person unfamiliar with the build can:
 1. Open the deployed URL on a phone-sized screen.
@@ -151,7 +168,7 @@ A person unfamiliar with the build can:
 6. Find a specific, pre-planted target photo in the demo corpus this
    way.
 
-## 8. Reference materials
+## 9. Reference materials
 
 Three mobile-app screenshots of the existing Google Photos "Ask Photos"
 flow are provided alongside this document for UI/style reference only

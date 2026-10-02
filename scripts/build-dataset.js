@@ -36,7 +36,7 @@ async function main() {
       tags: tagsInfo.tags,
       date: randomDate(startDate, endDate),
       isBestMatch: false,
-      tagVector: embedInfo.tagVector
+      embedding: embedInfo.embedding
     });
   }
   

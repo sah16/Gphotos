@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { retrievePhotos } from '@/lib/retrieval';
 import { getTopChips } from '@/lib/chips';
-import { normalizeQuery } from '@/lib/groq';
+import { getEmbedding } from '@/lib/embeddings';
 
 export async function POST(request: Request) {
   try {
@@ -12,10 +12,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
     }
 
-    const queryTokens = await normalizeQuery(query);
+    const queryEmbedding = await getEmbedding(query);
     
     // 1. Recompute original candidate pool
-    const candidatePool = retrievePhotos(queryTokens);
+    const candidatePool = retrievePhotos(queryEmbedding);
     
     // 2. Filter pool down (AND logic across chips)
     let filteredPool = candidatePool;
@@ -35,10 +35,9 @@ export async function POST(request: Request) {
     // 3. Recompute chips from the filtered pool
     const topChips = getTopChips(filteredPool, selectedChips);
 
-    // Take top 12 for the visible grid
     const visibleResults = filteredPool.slice(0, 12).map((p, index) => {
-      // Create a copy to remove tagVector
-      const { tagVector, ...safePhoto } = p;
+      // Create a copy to remove embedding
+      const { embedding, ...safePhoto } = p;
       return {
         ...safePhoto,
         isBestMatch: index === 0,

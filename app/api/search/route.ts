@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { retrievePhotos } from '@/lib/retrieval';
 import { getTopChips } from '@/lib/chips';
-import { normalizeQuery } from '@/lib/groq';
+import { getEmbedding } from '@/lib/embeddings';
 
 export async function POST(request: Request) {
   try {
@@ -12,14 +12,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Query is required and must be a string' }, { status: 400 });
     }
 
-    const queryTokens = await normalizeQuery(query);
-    const candidatePool = retrievePhotos(queryTokens);
+    const queryEmbedding = await getEmbedding(query);
+    const candidatePool = retrievePhotos(queryEmbedding);
     const topChips = getTopChips(candidatePool, []);
 
-    // Take top 12 for the visible grid as requested in typical scenarios
     const visibleResults = candidatePool.slice(0, 12).map((p, index) => {
-      // Create a copy to remove tagVector
-      const { tagVector, ...safePhoto } = p;
+      // Create a copy to remove embedding
+      const { embedding, ...safePhoto } = p;
       return {
         ...safePhoto,
         isBestMatch: index === 0 && query.trim().length > 0,

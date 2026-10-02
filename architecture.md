@@ -83,7 +83,19 @@ deploy — not part of the deployed app)
 - `scripts/tag-photos.js` — for each downloaded photo, calls a
   currently-live Groq vision-capable model (verify against
   `console.groq.com/docs/models` — do not hardcode an unverified model
-  name) to produce a caption and structured attribute tags.
+  name) to produce a caption and structured attribute tags. The tagging
+  prompt must extract **specific actions and objects** in the scene
+  (e.g. "blowing out candles," "holding a gift," "wearing a party hat"),
+  not just generic scene-level descriptors (setting, lighting, people
+  count, colour) — the former is what users actually remember and
+  search by; the latter alone produces chips that can miss a photo's
+  most identifying detail entirely. Use **one fixed tag schema/
+  vocabulary** across all photos (a defined set of attribute categories,
+  e.g. `people_count`, `setting`, `action`, `object`, `time_of_day`,
+  `colour`) so the same concept is never tagged two different ways (a
+  `people_count` of 0 must always be represented identically, not
+  sometimes as "People: 0" and sometimes as "0 people") — this prevents
+  duplicate/inconsistent chips downstream in chip ranking (§3.1).
 - `scripts/embed-photos.js` — builds a similarity representation per
   photo from its caption/tags (a real embedding if a Groq or other free
   embedding endpoint is available; otherwise a TF-IDF/keyword-overlap

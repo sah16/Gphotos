@@ -2,9 +2,9 @@
   "pixabay-8449204": {
     "caption": "A solitary figure in a dark coat walks along a wide, sandy beach in Denmark, accompanied by a shallow, reflective stream that mirrors the blue sky and clouds, with gentle waves and grassy dunes in the background.",
     "tags": [
-      "1 person",
-      "outdoor",
-      "beach",
+      "People Count: 1",
+      "Setting: outdoor",
+      "Setting: beach",
       "coastline",
       "shallow water",
       "reflection",
@@ -14,7 +14,7 @@
       "sea",
       "waves",
       "clouds",
-      "daytime",
+      "Time of Day: daytime",
       "blue",
       "sand-colored",
       "green",
@@ -30,9 +30,9 @@
   "pixabay-4286271": {
     "caption": "A row of vibrant, multi-colored wooden beach huts with corrugated metal roofs and decorative finials, featuring 'Bayside' signage, set on a sandy beach under a bright blue sky.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: beach",
-      "setting: outdoor",
+      "Setting: outdoor",
       "objects: beach huts",
       "objects: corrugated metal roofs",
       "objects: wooden benches",
@@ -51,7 +51,7 @@
   "pixabay-2413081": {
     "caption": "A serene tropical beach scene featuring turquoise ocean water with gentle white waves lapping onto golden sand under a bright blue sky with scattered clouds.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: tropical beach",
       "setting: ocean shore",
       "objects: turquoise water",
@@ -72,7 +72,7 @@
     "tags": [
       "aerial view",
       "high angle",
-      "beach",
+      "Setting: beach",
       "ocean",
       "turquoise water",
       "white foam",
@@ -85,23 +85,23 @@
       "coast",
       "nature",
       "summer",
-      "outdoor",
+      "Setting: outdoor",
       "blue",
       "white",
-      "daytime"
+      "Time of Day: daytime"
     ]
   },
   "pixabay-2089936": {
     "caption": "Powerful ocean waves crash against dark, jagged sea stacks, sending plumes of white sea spray into the misty air along a rugged Pacific coastline.",
     "tags": [
-      "0 people",
-      "outdoor setting",
+      "People Count: 0",
+      "Setting: outdoor",
       "ocean",
       "sea stacks",
       "crashing waves",
       "sea spray",
       "rocky coastline",
-      "daytime",
+      "Time of Day: daytime",
       "blue and grey palette",
       "long exposure photography",
       "seascape",
@@ -112,9 +112,9 @@
   "pixabay-4668754": {
     "caption": "A barefoot woman with a backpack sits on a sunlit granite rock, observing a colony of African penguins and seabirds on a coastal cliff under a clear blue sky.",
     "tags": [
-      "1 person",
+      "People Count: 1",
       "female",
-      "outdoor setting",
+      "Setting: outdoor",
       "coastal cliff",
       "granite rock",
       "african penguins",
@@ -123,7 +123,7 @@
       "sunglasses",
       "smartwatch",
       "barefoot",
-      "daytime",
+      "Time of Day: daytime",
       "blue sky",
       "grey rock",
       "black and white birds",
@@ -136,15 +136,15 @@
   "pixabay-3194377": {
     "caption": "A high-speed close-up of a crashing ocean wave, capturing the dynamic interplay of white sea foam and translucent turquoise water as it breaks against the shore.",
     "tags": [
-      "0 people",
-      "outdoor setting",
+      "People Count: 0",
+      "Setting: outdoor",
       "beach environment",
       "ocean wave",
       "sea foam",
       "water splash",
       "turquoise water",
       "white foam",
-      "daytime",
+      "Time of Day: daytime",
       "high-speed photography",
       "nature",
       "coastal",
@@ -155,9 +155,9 @@
   "pixabay-8563083": {
     "caption": "A serene coastal scene at sunset featuring gentle waves washing onto wet, reflective sand, with a rocky breakwater in the distance under a sky filled with dramatic grey and orange clouds.",
     "tags": [
-      "0 people",
-      "outdoor setting",
-      "beach",
+      "People Count: 0",
+      "Setting: outdoor",
+      "Setting: beach",
       "ocean",
       "waves",
       "foam",
@@ -179,12 +179,12 @@
   "pixabay-3098951": {
     "caption": "A couple holding hands and walking barefoot along the wet, reflective shoreline of a secluded beach under an overcast sky.",
     "tags": [
-      "2 people",
+      "People Count: 2",
       "man",
       "woman",
       "couple",
-      "beach",
-      "outdoors",
+      "Setting: beach",
+      "Setting: outdoor",
       "ocean",
       "waves",
       "wet sand",
@@ -196,7 +196,7 @@
       "blue shirt",
       "jeans",
       "overcast",
-      "daytime",
+      "Time of Day: daytime",
       "secluded",
       "coastal landscape",
       "romantic",
@@ -206,14 +206,14 @@
   "pixabay-815303": {
     "caption": "Weathered reddish-brown wooden chairs and a table stand on white sand, facing a calm turquoise sea with a sailboat visible on the horizon.",
     "tags": [
-      "0 people",
-      "outdoor beach setting",
+      "People Count: 0",
+      "Setting: outdoor",
       "wooden chairs",
       "wooden table",
       "white sand",
       "turquoise water",
       "sailboat",
-      "daytime",
+      "Time of Day: daytime",
       "pastel color palette",
       "weathered wood",
       "coastal landscape",
@@ -224,18 +224,18 @@
   "pixabay-1836377": {
     "caption": "A woman with curly brown hair floats on her back in dark, rippling water, wearing a white ruffled swimsuit and a thin beaded necklace.",
     "tags": [
-      "1 person",
-      "outdoor",
+      "People Count: 1",
+      "Setting: outdoor",
       "water",
       "ocean",
-      "beach",
+      "Setting: beach",
       "swimsuit",
       "white clothing",
       "necklace",
       "curly hair",
       "floating",
       "relaxing",
-      "daytime",
+      "Time of Day: daytime",
       "muted tones",
       "gray water",
       "white",
@@ -258,8 +258,8 @@
       "nature",
       "summer",
       "recreation",
-      "outdoor",
-      "daytime",
+      "Setting: outdoor",
+      "Time of Day: daytime",
       "high contrast",
       "texture",
       "dynamic movement"
@@ -268,8 +268,8 @@
   "pixabay-1032523": {
     "caption": "A panoramic night landscape featuring the green aurora borealis dancing across a star-filled sky above a rugged, rocky coastline and calm sea.",
     "tags": [
-      "people: 0",
-      "setting: outdoor coastal",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: rocky shoreline",
       "setting: fjord",
       "objects: aurora borealis",
@@ -288,7 +288,7 @@
   "pixabay-7087722": {
     "caption": "A silhouetted couple stands hand-in-hand in the shallow surf of a beach, backlit by a low, glowing sun on the horizon, with golden light reflecting across the rippling water and a distant coastline visible in the twilight.",
     "tags": [
-      "people: 2",
+      "People Count: 2",
       "setting: beach",
       "setting: ocean",
       "setting: shoreline",
@@ -312,8 +312,8 @@
   "pixabay-1822598": {
     "caption": "A woman in a flowing dress walks along the edge of a still body of water, her silhouette perfectly mirrored in the golden sunset sky.",
     "tags": [
-      "1 person",
-      "outdoor",
+      "People Count: 1",
+      "Setting: outdoor",
       "water",
       "sunset",
       "golden hour",
@@ -332,9 +332,9 @@
   "pixabay-1853902": {
     "caption": "A slim woman in a red bikini performs a flexible backbend yoga pose on a sandy beach, with gentle ocean waves and a clear blue sky in the background.",
     "tags": [
-      "1 person",
-      "outdoor",
-      "beach",
+      "People Count: 1",
+      "Setting: outdoor",
+      "Setting: beach",
       "ocean",
       "sand",
       "sky",
@@ -343,7 +343,7 @@
       "yoga pose",
       "backbend",
       "stretching",
-      "daytime",
+      "Time of Day: daytime",
       "blue",
       "red",
       "tropical",
@@ -354,8 +354,8 @@
   "pixabay-10091999": {
     "caption": "A Black woman with long braided hair and a white headband stands in profile on a beach at dusk, wearing a white cold-shoulder blouse over a black lace top and black shorts, with the ocean and a muted blue sky in the background.",
     "tags": [
-      "1 person",
-      "beach",
+      "People Count: 1",
+      "Setting: beach",
       "ocean",
       "dusk",
       "blue hour",
@@ -371,20 +371,20 @@
       "muted blue tones",
       "casual beachwear",
       "Ghana",
-      "outdoor photography"
+      "Setting: outdoor"
     ]
   },
   "pixabay-10093262": {
     "caption": "A young man with dark hair sits on a mossy rock by a frozen lake, wearing a black turtleneck, a black fringed scarf, and a grey houndstooth blazer, looking down with a contemplative expression.",
     "tags": [
-      "1 person",
+      "People Count: 1",
       "male",
       "young adult",
-      "outdoor",
+      "Setting: outdoor",
       "frozen lake",
       "winter",
       "overcast",
-      "daytime",
+      "Time of Day: daytime",
       "sitting",
       "looking down",
       "contemplative",
@@ -414,17 +414,17 @@
       "sea lion",
       "marine mammal",
       "wildlife",
-      "beach",
+      "Setting: beach",
       "sandy shore",
       "ocean waves",
       "coastal",
-      "daytime",
+      "Time of Day: daytime",
       "natural light",
       "brown fur",
       "grey fur",
       "sand texture",
       "resting",
-      "outdoor",
+      "Setting: outdoor",
       "nature photography",
       "close-up",
       "shallow depth of field"
@@ -433,9 +433,9 @@
   "pixabay-2212948": {
     "caption": "A surfer in a dark wetsuit rides a breaking ocean wave against a vibrant sunset sky filled with orange and yellow clouds.",
     "tags": [
-      "people: 1",
+      "People Count: 1",
       "setting: ocean",
-      "setting: outdoor",
+      "Setting: outdoor",
       "objects: surfboard",
       "objects: wave",
       "objects: wetsuit",
@@ -450,7 +450,7 @@
   "pixabay-4626520": {
     "caption": "A collage of four high-speed photographs capturing the raw power of the Atlantic ocean, featuring turquoise waves cresting into white foam against a clear blue sky.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: ocean",
       "setting: open water",
       "objects: breaking waves",
@@ -471,10 +471,10 @@
   "pixabay-1967892": {
     "caption": "A woman with dark hair in a bun sits in a cross-legged meditation pose on a blue yoga mat, facing the turquoise ocean waves on a pebbled beach.",
     "tags": [
-      "1 person",
-      "beach",
-      "outdoor",
-      "daytime",
+      "People Count: 1",
+      "Setting: beach",
+      "Setting: outdoor",
+      "Time of Day: daytime",
       "yoga mat",
       "ocean",
       "waves",
@@ -497,13 +497,13 @@
   "pixabay-3002608": {
     "caption": "A pair of round, gold-rimmed sunglasses with vibrant magenta lenses resting on a weathered wooden dock, with a blurred background of water and green reeds.",
     "tags": [
-      "0 people",
-      "outdoor",
+      "People Count: 0",
+      "Setting: outdoor",
       "wooden dock",
       "sunglasses",
       "gold frame",
       "magenta lenses",
-      "daytime",
+      "Time of Day: daytime",
       "magenta",
       "gold",
       "weathered wood",
@@ -517,15 +517,15 @@
   "pixabay-6873335": {
     "caption": "A high-angle view looking down from a grassy, lichen-covered cliff edge into a churning turquoise ocean where white foam crashes against a central rocky outcrop.",
     "tags": [
-      "0 people",
-      "outdoor coastal setting",
+      "People Count: 0",
+      "Setting: outdoor",
       "rocky cliff",
       "ocean water",
       "white sea foam",
       "rock outcrop",
       "green grass",
       "orange lichen",
-      "daytime",
+      "Time of Day: daytime",
       "turquoise blue",
       "grey stone",
       "white",
@@ -539,15 +539,15 @@
   "pixabay-6467431": {
     "caption": "A woman in a striped t-shirt and jeans performs a full split on a pebbled beach, with large dark rocks and the ocean in the background.",
     "tags": [
-      "1 person",
+      "People Count: 1",
       "female",
       "adult",
-      "outdoor",
-      "beach",
+      "Setting: outdoor",
+      "Setting: beach",
       "coastal",
       "rocky shoreline",
       "ocean",
-      "daytime",
+      "Time of Day: daytime",
       "overcast",
       "black and white",
       "monochrome",
@@ -570,7 +570,7 @@
   "pixabay-4501231": {
     "caption": "A woman with long blonde hair stands with her back to the camera, gazing at a sparkling ocean sunset with a distant island silhouette in the background.",
     "tags": [
-      "people: 1 woman",
+      "People Count: 1",
       "setting: beach shoreline",
       "setting: ocean view",
       "setting: distant island",
@@ -600,16 +600,16 @@
   "pixabay-8208513": {
     "caption": "A group of five young adults walking barefoot along the wet shoreline of a wide, sandy beach, viewed from behind as they head towards the gentle waves under a hazy, overcast sky.",
     "tags": [
-      "5 people",
+      "People Count: 5",
       "young adults",
-      "beach",
-      "outdoors",
+      "Setting: beach",
+      "Setting: outdoor",
       "ocean",
       "sand",
       "shoreline",
       "walking",
       "friends",
-      "daytime",
+      "Time of Day: daytime",
       "overcast",
       "hazy",
       "muted colors",
@@ -624,9 +624,9 @@
   "pixabay-9719575": {
     "caption": "A close-up, cropped shot of a mother and daughter holding hands while walking on a sandy beach, featuring the mother's distressed light blue jeans and the child's textured light blue fleece jacket against a blurred ocean background.",
     "tags": [
-      "people: 2",
+      "People Count: 2",
       "setting: beach",
-      "setting: outdoors",
+      "Setting: outdoor",
       "setting: shoreline",
       "objects: hands",
       "objects: jeans",
@@ -645,9 +645,9 @@
   "pixabay-5899078": {
     "caption": "A woman sits on a concrete ledge outside a weathered concrete cafe in Japan, looking at her phone while holding a drink, with a black folding bicycle parked nearby and a chalkboard sign advertising espresso and sandwiches.",
     "tags": [
-      "1 person",
+      "People Count: 1",
       "female",
-      "outdoor",
+      "Setting: outdoor",
       "street corner",
       "cafe exterior",
       "japan",
@@ -661,7 +661,7 @@
       "sandwiches",
       "craft beer",
       "warm interior lighting",
-      "daytime",
+      "Time of Day: daytime",
       "monochrome exterior",
       "yellow accents",
       "sitting",
@@ -673,7 +673,7 @@
   "pixabay-4202579": {
     "caption": "A macro collage of four panels showing close-up textures of roasted coffee beans with varying depths of field and lighting.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: studio close-up",
       "objects: roasted coffee beans",
       "time-of-day: neutral",
@@ -690,8 +690,8 @@
   "pixabay-5972490": {
     "caption": "A young woman with brown hair, wearing a light blue denim jacket, sits at a rustic wooden table in a cafe, reading an open book while holding her hair back; an iced coffee and a small potted plant sit on the table beside her.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "cafe",
       "wooden table",
       "open book",
@@ -702,7 +702,7 @@
       "black backpack",
       "wooden chair",
       "patterned tile floor",
-      "daytime",
+      "Time of Day: daytime",
       "natural light",
       "blue",
       "brown",
@@ -715,18 +715,17 @@
   "pixabay-66789": {
     "caption": "Facade of Le Calendal hotel and cafe in Provence, featuring pink stucco walls, dark blue shutters, and outdoor seating under an overcast sky",
     "tags": [
-      "0 people",
-      "outdoor street setting",
+      "People Count: 0",
+      "Setting: outdoor",
       "hotel facade",
       "cafe entrance",
       "blue shutters",
       "pink stucco wall",
-      "outdoor tables",
       "wicker chairs",
       "potted plants",
       "flower boxes",
       "overcast sky",
-      "daytime",
+      "Time of Day: daytime",
       "muted colors",
       "architectural detail",
       "European street",
@@ -741,7 +740,7 @@
     "caption": "A person wearing a minimalist wristwatch pours dark coffee from a glass carafe into a white ceramic cup on a wooden table, next to a smartphone displaying the time 14:40 in bright sunlight.",
     "tags": [
       "one person",
-      "outdoor cafe",
+      "Setting: outdoor",
       "wooden table",
       "glass carafe",
       "white ceramic cup",
@@ -765,8 +764,8 @@
   "pixabay-424763": {
     "caption": "A close-up, high-angle shot of a stainless steel espresso portafilter filled with a mound of dark, freshly ground coffee, resting on a wooden surface next to a black tamper with scattered coffee grounds.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "wooden table",
       "espresso portafilter",
       "coffee grounds",
@@ -784,8 +783,8 @@
   "pixabay-3537801": {
     "caption": "A sun-drenched, empty outdoor seating area of a traditional Greek cafe on Karpathos Island, featuring a weathered turquoise facade with pink trim, a blue wooden door, and rows of red wooden chairs with woven seats arranged on a red-tiled terrace.",
     "tags": [
-      "people: 0",
-      "setting: outdoor cafe terrace",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: mediterranean street",
       "setting: karpathos island greece",
       "objects: red wooden chairs",
@@ -809,8 +808,8 @@
   "pixabay-2862155": {
     "caption": "A smiling couple in matching white shirts and rust-colored trousers sit intimately on a wooden bench seat in a cafe, holding hands and gazing at each other, surrounded by decorative pillows with romantic text like 'Mr. Right' and 'Mrs.'",
     "tags": [
-      "people: 2",
-      "setting: indoor cafe",
+      "People Count: 2",
+      "Setting: indoor",
       "setting: wooden bench seating",
       "objects: decorative pillows",
       "objects: wooden table",
@@ -832,8 +831,8 @@
   "pixabay-698681": {
     "caption": "Close-up details of vintage bar stools with worn brown leather seats and black metal legs, set against a backdrop of distressed honey-toned wooden paneling in a traditional cafe.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "cafe interior",
       "bar counter",
       "wooden paneling",
@@ -852,8 +851,8 @@
   "pixabay-563797": {
     "caption": "A top-down and close-up collage of a black coffee setup on a dark textured surface, featuring a white ceramic cup on a saucer, a small milk pitcher, a silver spoon holding a sugar cube, and scattered roasted coffee beans.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: cafe",
       "setting: table",
       "objects: coffee cup",
@@ -873,8 +872,8 @@
   "pixabay-563800": {
     "caption": "A close-up of milk being poured from a white ceramic pitcher into a cup of black coffee, surrounded by scattered roasted coffee beans on a dark surface with a red and black patterned teapot in the background.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: cafe",
       "setting: tabletop",
       "objects: coffee cup",
@@ -898,10 +897,10 @@
   "pixabay-5016043": {
     "caption": "A man in a corduroy jacket and bucket hat pours steaming coffee from a stainless steel pitcher into a black enamel mug outdoors.",
     "tags": [
-      "1 person",
+      "People Count: 1",
       "male",
-      "outdoor setting",
-      "daytime",
+      "Setting: outdoor",
+      "Time of Day: daytime",
       "morning light",
       "coffee pouring",
       "stainless steel pitcher",
@@ -921,8 +920,8 @@
   "pixabay-1291656": {
     "caption": "Macro photography of glossy, dark-roasted coffee beans piled on a white surface, showcasing the central crease and oily texture of the seeds.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "white surface",
       "coffee beans",
       "dark roast",
@@ -938,8 +937,8 @@
   "pixabay-4246954": {
     "caption": "A young woman with long wavy hair sips an iced coffee through a straw while looking down at a pink smartphone in a dimly lit cafe.",
     "tags": [
-      "people: 1",
-      "setting: indoor cafe",
+      "People Count: 1",
+      "Setting: indoor",
       "setting: bar counter background",
       "objects: pink smartphone",
       "objects: iced coffee cup",
@@ -958,8 +957,8 @@
   "pixabay-7111101": {
     "caption": "A sun-drenched outdoor cafe courtyard featuring rustic wooden furniture, including small tables and stools, arranged on a stone-paved floor. The space is lush with greenery, including potted ferns, hanging vines, and a young tree, set against white-washed walls and a grey brick facade. Decorative elements like woven rattan chairs, leaf-patterned cushions, and a wooden sign displaying Wi-Fi details add to the bohemian atmosphere.",
     "tags": [
-      "people: 0",
-      "setting: outdoor cafe courtyard",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: stone paved patio",
       "objects: wooden tables",
       "objects: wooden stools",
@@ -983,7 +982,7 @@
   "pixabay-9641925": {
     "caption": "A Parisian street corner cafe featuring a facade covered in vibrant pink artificial cherry blossoms, with red and white striped awnings and bistro seating below a classic Haussmann-style building.",
     "tags": [
-      "people: 10+",
+      "People Count: 1",
       "setting: urban street corner",
       "setting: cafe exterior",
       "objects: ornate wrought-iron balconies",
@@ -996,7 +995,7 @@
       "colour: pink",
       "colour: cream",
       "colour: black",
-      "activity: outdoor dining",
+      "Setting: outdoor",
       "activity: street photography"
     ]
   },
@@ -1004,7 +1003,7 @@
     "caption": "Patrons dine at bistro tables on a cobblestone sidewalk beneath a green scalloped awning and umbrella at the Paris Beaubourg cafe, set against a historic stone building facade.",
     "tags": [
       "people: 8+",
-      "setting: outdoor cafe terrace",
+      "Setting: outdoor",
       "setting: cobblestone street",
       "setting: urban paris",
       "objects: bistro chairs",
@@ -1025,8 +1024,8 @@
   "pixabay-839233": {
     "caption": "A minimalist black and white composition featuring a white ceramic mug on a dark wooden surface, with delicate wisps of steam rising in elegant, swirling patterns against a deep charcoal background.",
     "tags": [
-      "people: 0",
-      "setting: indoor cafe",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: dark background",
       "objects: white ceramic mug",
       "objects: rising steam",
@@ -1044,9 +1043,9 @@
   "pixabay-2425303": {
     "caption": "A silver laptop with a black screen sits on a rustic wooden table next to a white cup of black coffee and a small spiral-bound notebook with a blue pen, set in a cafe environment.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: cafe",
-      "setting: indoor",
+      "Setting: indoor",
       "objects: laptop",
       "objects: coffee cup",
       "objects: notebook",
@@ -1066,8 +1065,8 @@
   "pixabay-5176961": {
     "caption": "Overhead flat lay of a rustic brown ceramic bowl filled with roasted coffee beans, spilling onto a dark grey textured slate surface with a wooden scoop resting beside it.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "dark grey slate background",
       "ceramic bowl",
       "roasted coffee beans",
@@ -1081,10 +1080,10 @@
   "pixabay-7520627": {
     "caption": "A Muslim woman in a beige hijab and matching outfit sits in a cafe, writing in a black hardcover notebook with a clear ballpoint pen.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "cafe",
-      "daytime",
+      "Time of Day: daytime",
       "beige",
       "brown",
       "black",
@@ -1103,8 +1102,8 @@
   "pixabay-3979292": {
     "caption": "A woman wearing a vibrant floral headband and matching top applies makeup to a young girl's face using a small brush and compact mirror at an outdoor festival.",
     "tags": [
-      "people: 2",
-      "setting: outdoor festival",
+      "People Count: 2",
+      "Setting: outdoor",
       "objects: makeup brush",
       "objects: compact mirror",
       "objects: floral headband",
@@ -1134,8 +1133,8 @@
   "pixabay-2934720": {
     "caption": "A silver tabby Scottish Fold cat with folded ears and amber eyes sits upright on a beige carpet, displaying a relaxed posture with paws crossed and a long striped tail resting on the floor.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "carpet",
       "scottish fold",
       "silver tabby",
@@ -1153,13 +1152,13 @@
   "pixabay-6664412": {
     "caption": "A close-up of a sleeping ginger tabby cat with eyes closed and paws tucked, resting on a dark surface.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "cat",
       "paws",
       "whiskers",
       "fur",
-      "daytime",
+      "Time of Day: daytime",
       "orange",
       "brown",
       "sleeping",
@@ -1169,9 +1168,9 @@
   "pixabay-428338": {
     "caption": "A close-up, high-angle shot of a business agreement resting on a black desk, featuring a handwritten signature next to a black fountain pen with a gold nib and a financial calculator with orange and white keys.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: office desk",
-      "setting: indoor",
+      "Setting: indoor",
       "objects: fountain pen",
       "objects: financial calculator",
       "objects: signed contract",
@@ -1188,8 +1187,8 @@
   "pixabay-7369404": {
     "caption": "Vibrant red plastic chairs with intricate lattice-patterned backs arranged around a table on a sunlit outdoor cafe patio, casting sharp geometric shadows on the stone pavement.",
     "tags": [
-      "people: 0",
-      "setting: outdoor cafe patio",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: urban sidewalk",
       "objects: red plastic chairs",
       "objects: lattice backrest",
@@ -1206,9 +1205,9 @@
   "pixabay-583442": {
     "caption": "A young boy in a red shirt leans forward with eyes closed, blowing out the flames of several yellow candles on a rectangular cake decorated with green and yellow frosting. A green cube with a pixelated face, resembling a Minecraft Creeper, sits on the table to the right.",
     "tags": [
-      "1 person",
-      "indoor",
-      "night",
+      "People Count: 1",
+      "Setting: indoor",
+      "Time of Day: night",
       "birthday cake",
       "candles",
       "flames",
@@ -1226,10 +1225,10 @@
   "pixabay-7066308": {
     "caption": "Macro photography of roasted coffee beans showing detailed surface texture and central creases in warm brown tones",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: studio close-up",
       "objects: coffee beans, roasted beans",
-      "time-of-day: indoor lighting",
+      "Setting: indoor",
       "colour: brown, dark brown, tan",
       "activity: still life photography"
     ]
@@ -1237,7 +1236,7 @@
   "pixabay-4618705": {
     "caption": "Three white ceramic cups filled with espresso-based coffee featuring intricate latte art designs, including a heart and leaf patterns, arranged diagonally on a rustic wooden table.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: cafe interior",
       "setting: wooden table",
       "objects: white ceramic cups",
@@ -1256,13 +1255,13 @@
     "caption": "A bearded man in a white shirt and a woman in a white blouse collaborate at a rustic wooden cafe table, using a laptop, a smartphone, and a tablet displaying a coffee-themed article, with iced coffee drinks nearby.",
     "tags": [
       "people_count_2",
-      "setting_cafe_outdoor",
+      "Setting: outdoor",
       "object_laptop",
       "object_smartphone",
       "object_tablet",
       "object_iced_coffee",
       "object_wooden_table",
-      "time_of_day_daytime",
+      "Time of Day: daytime",
       "colour_white",
       "colour_brown",
       "colour_grey",
@@ -1275,8 +1274,8 @@
   "pixabay-1854180": {
     "caption": "A flat-lay composition on a weathered, rustic wooden table featuring a white notepad on a brown kraft paper sheet, a black fountain pen, and a white ceramic cup of latte with heart-shaped foam art.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "cafe table",
       "rustic wooden surface",
       "weathered planks",
@@ -1294,13 +1293,13 @@
       "writing station",
       "stationery",
       "coffee break",
-      "daytime lighting"
+      "Time of Day: daytime"
     ]
   },
   "pixabay-9743627": {
     "caption": "Extreme close-up macro shot of a pile of roasted coffee beans, highlighting their glossy, wrinkled texture and central creases in rich brown tones.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: studio",
       "objects: coffee beans, roasted beans",
       "time-of-day: n/a",
@@ -1311,8 +1310,8 @@
   "pixabay-2315565": {
     "caption": "A ceramic mug with vertical red, black, and white stripes sits on a weathered wooden table, set against a bright, sunlit background of blurred green foliage.",
     "tags": [
-      "people: 0",
-      "setting: outdoor cafe",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: patio",
       "objects: ceramic mug",
       "objects: wooden table",
@@ -1331,8 +1330,8 @@
   "pixabay-924948": {
     "caption": "Close-up of a white ceramic pour-over coffee dripper containing a paper filter filled with dark brown coffee grounds, resting on a glass carafe.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "cafe environment",
       "coffee dripper",
       "paper filter",
@@ -1352,8 +1351,8 @@
   "pixabay-5134828": {
     "caption": "A group of four young girls laughing and playing outdoors, covered in white powder as one throws a handful into the air, creating a cloud of dust in a black and white photograph.",
     "tags": [
-      "4 people",
-      "outdoor setting",
+      "People Count: 4",
+      "Setting: outdoor",
       "backyard",
       "white powder",
       "cloud of dust",
@@ -1362,21 +1361,21 @@
       "striped t-shirt",
       "denim shorts",
       "plastic chair",
-      "daytime",
+      "Time of Day: daytime",
       "black and white",
       "monochrome",
       "throwing powder",
       "laughing",
       "playing",
-      "birthday celebration",
+      "Action: birthday celebration",
       "summer fun"
     ]
   },
   "pixabay-1498950": {
     "caption": "A woman in a navy blue knit sweater applies a painted mustache to the face of a young boy dressed in a pirate costume with a black tricorn hat and red bandana, with blue paint tins visible on the table.",
     "tags": [
-      "2 people",
-      "outdoor setting",
+      "People Count: 2",
+      "Setting: outdoor",
       "face painting",
       "pirate costume",
       "tricorn hat",
@@ -1385,7 +1384,7 @@
       "blue paint tins",
       "makeup brush",
       "wristwatch",
-      "daytime",
+      "Time of Day: daytime",
       "close-up",
       "child",
       "woman",
@@ -1395,7 +1394,7 @@
   "pixabay-1893640": {
     "caption": "Two festive gift boxes wrapped in red and white patterned paper, one featuring red stars and the other white holiday icons, both tied with gold ribbons and bows against a plain white background.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: studio",
       "setting: white background",
       "objects: gift boxes",
@@ -1417,8 +1416,8 @@
   "pixabay-1835449": {
     "caption": "A row of lit, multi-colored letter candles spelling 'HAPPY BIRTHDAY' arranged on a white surface against a dark background.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: dark background",
       "objects: birthday candles",
       "objects: letter candles",
@@ -1435,8 +1434,8 @@
   "pixabay-2262165": {
     "caption": "Close-up of a hand holding a champagne flute as sparkling wine is poured from a green bottle, creating a frothy white head against a soft-focus background.",
     "tags": [
-      "people: 1",
-      "setting: indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "objects: champagne bottle",
       "objects: champagne flute",
       "objects: hand",
@@ -1451,8 +1450,8 @@
   "pixabay-2338813": {
     "caption": "A pink buttercream cake decorated with piped rosettes and lit spiral candles sits on a white plate, accompanied by a vase of mixed flowers on a draped magenta satin tablecloth.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "tabletop",
       "birthday cake",
       "buttercream rosettes",
@@ -1464,7 +1463,7 @@
       "vase",
       "pink colour palette",
       "still life",
-      "birthday celebration",
+      "Action: birthday celebration",
       "dessert",
       "soft lighting"
     ]
@@ -1472,8 +1471,8 @@
   "pixabay-557205": {
     "caption": "A close-up collage of festive gift boxes wrapped in glossy red paper with white and green stripes, adorned with metallic red and gold bows, ribbons, and a small holiday card.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "gift boxes",
       "red striped wrapping paper",
       "metallic ribbon",
@@ -1491,10 +1490,10 @@
   "pixabay-1761634": {
     "caption": "A cluster of vibrant, glossy rubber balloons in purple, green, yellow, blue, red, and orange floating on the rippling surface of a turquoise swimming pool.",
     "tags": [
-      "0 people",
+      "People Count: 0",
       "swimming pool setting",
-      "outdoor",
-      "daytime",
+      "Setting: outdoor",
+      "Time of Day: daytime",
       "rubber balloons",
       "purple balloon",
       "green balloon",
@@ -1519,8 +1518,8 @@
   "pixabay-380178": {
     "caption": "A collage of close-up shots featuring chocolate cupcakes topped with swirls of light blue frosting and white pearl sprinkles, each adorned with a lit, striped birthday candle in blue, red, or yellow.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: close-up",
       "objects: cupcake",
       "objects: chocolate cake",
@@ -1540,8 +1539,8 @@
   "pixabay-1786430": {
     "caption": "A vibrant cluster of glossy heart-shaped and round balloons in metallic purple, magenta, and green floating against a bright blue sky with scattered white clouds.",
     "tags": [
-      "people: 0",
-      "setting: outdoor sky",
+      "People Count: 0",
+      "Setting: outdoor",
       "objects: heart-shaped balloons, round latex balloons, helium balloons, strings",
       "time-of-day: daytime",
       "colour: metallic purple, magenta, lime green, orange, blue sky, white clouds",
@@ -1551,8 +1550,8 @@
   "pixabay-1869790": {
     "caption": "A dense, close-up cluster of inflated latex balloons in vibrant shades of hot pink, cyan, lime green, yellow, purple, and orange, filling the frame with a colorful, festive texture.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: close-up",
       "objects: latex balloons",
       "objects: party decorations",
@@ -1571,8 +1570,8 @@
   "pixabay-1835443": {
     "caption": "A round birthday cake decorated with a ring of lit, multi-colored letter candles spelling 'HAPPY BIRTHDAY' against a dark background.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: dark background",
       "objects: birthday cake",
       "objects: letter candles",
@@ -1588,8 +1587,8 @@
   "pixabay-3421065": {
     "caption": "A vibrant row of colorful paper lanterns in pink, green, blue, and yellow hanging in a line, likely at a Buddhist temple festival in Korea.",
     "tags": [
-      "people: 0",
-      "setting: outdoor temple festival",
+      "People Count: 0",
+      "Setting: outdoor",
       "objects: paper lanterns, hanging decorations, metal rings",
       "time-of-day: daytime",
       "colour: multicolored, pink, green, blue, yellow, red",
@@ -1599,8 +1598,8 @@
   "pixabay-1869816": {
     "caption": "A low-angle close-up of a cluster of glossy purple and magenta helium balloons tied with thin ribbons, floating against a bright blue sky with scattered white clouds.",
     "tags": [
-      "0 people",
-      "outdoor setting",
+      "People Count: 0",
+      "Setting: outdoor",
       "blue sky",
       "white clouds",
       "purple balloons",
@@ -1609,20 +1608,20 @@
       "helium balloons",
       "glossy latex",
       "ribbon ties",
-      "daytime",
+      "Time of Day: daytime",
       "bright lighting",
       "vibrant colors",
       "low angle shot",
       "close-up",
-      "birthday celebration",
+      "Action: birthday celebration",
       "party decoration"
     ]
   },
   "pixabay-1114056": {
     "caption": "Close-up of a chocolate cake topped with glossy dark icing and lit, multi-colored spiral birthday candles against a black background.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: dark background",
       "objects: birthday cake",
       "objects: chocolate cake",
@@ -1644,8 +1643,8 @@
   "pixabay-7948556": {
     "caption": "A pink drip cake topped with macarons, meringues, and fresh raspberries sits on a glass stand, accompanied by a bowl of peaches and a vase of marshmallow pops on a rustic wooden table.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: rustic",
       "setting: wooden table",
       "objects: cake",
@@ -1668,8 +1667,8 @@
   "pixabay-553149": {
     "caption": "A close-up, high-key shot of a cluster of wrapped gift boxes featuring pink polka-dot paper, solid purple wrapping, and vibrant lime green packaging, all adorned with textured satin ribbons in hot pink and lavender.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: close-up",
       "objects: gift boxes",
       "objects: satin ribbons",
@@ -1688,8 +1687,8 @@
   "pixabay-1869269": {
     "caption": "A vibrant collage of close-up shots featuring glossy green and magenta latex balloons tied with curly ribbons, set against a bright sky background.",
     "tags": [
-      "people: 0",
-      "setting: outdoor",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: sky background",
       "objects: green balloons",
       "objects: magenta balloons",
@@ -1706,8 +1705,8 @@
   "pixabay-1017709": {
     "caption": "A rectangular chocolate birthday cake topped with fresh strawberries, blueberries, and whipped cream, illuminated by dozens of lit multicolored candles in a dark room.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: dark room",
       "objects: birthday cake",
       "objects: strawberries",
@@ -1726,13 +1725,13 @@
   "pixabay-5758759": {
     "caption": "A close-up of a gift box wrapped in red, green, and gold striped paper, topped with a shiny gold ribbon bow, set against a dark, blurred background with soft bokeh lights.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "gift box",
       "gold ribbon",
       "striped wrapping paper",
       "bokeh background",
-      "night time",
+      "Time of Day: night",
       "red",
       "green",
       "gold",
@@ -1746,8 +1745,8 @@
   "pixabay-4703609": {
     "caption": "A festive dessert table featuring a chocolate mousse cake decorated with a ring of rolled wafer cookies and a silver ribbon, accompanied by a red-glazed cake, a bowl of biscuits, and a glass carafe on a white tablecloth.",
     "tags": [
-      "0 people",
-      "indoor setting",
+      "People Count: 0",
+      "Setting: indoor",
       "chocolate cake",
       "wafer cookies",
       "silver ribbon",
@@ -1756,7 +1755,7 @@
       "bowl of biscuits",
       "glass carafe",
       "white tablecloth",
-      "daytime",
+      "Time of Day: daytime",
       "brown and red tones",
       "food presentation",
       "birthday party"
@@ -1769,7 +1768,7 @@
       "sparks",
       "glowing",
       "celebration",
-      "outdoor",
+      "Setting: outdoor",
       "sky",
       "daylight",
       "blue",
@@ -1785,8 +1784,8 @@
   "pixabay-621159": {
     "caption": "A close-up of a red fondant cake sculpted to resemble a toy train engine, featuring black fondant wheels, a white and black smokestack, and yellow headlights, with a candy-filled carriage attached behind it.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: tabletop",
       "objects: cake",
       "objects: fondant",
@@ -1807,8 +1806,8 @@
   "pixabay-4764395": {
     "caption": "A close-up of an elegant white birthday cake decorated with a large pink buttercream rose, clusters of red berries, baby's breath, and gold leaf accents, set against a soft pink background with a blurred 'Happy Birthday' topper.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: studio",
       "objects: cake",
       "objects: buttercream rose",
@@ -1828,8 +1827,8 @@
   "pixabay-3061551": {
     "caption": "A close-up still life of a natural champagne cork and a black Gosset wire cage resting on a reflective blue surface, with a blurred outdoor background.",
     "tags": [
-      "people: 0",
-      "setting: outdoor",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: reflective surface",
       "objects: champagne cork",
       "objects: wire cage",
@@ -1845,7 +1844,7 @@
   "pixabay-4057612": {
     "caption": "Three square gift boxes wrapped in red and silver paper, topped with large matching satin bows, arranged on a reflective black surface against a dark background.",
     "tags": [
-      "0 people",
+      "People Count: 0",
       "studio setting",
       "black background",
       "reflective surface",
@@ -1856,7 +1855,7 @@
       "red bow",
       "silver bow",
       "product photography",
-      "indoor",
+      "Setting: indoor",
       "red",
       "silver",
       "black",
@@ -1868,8 +1867,8 @@
   "pixabay-2377087": {
     "caption": "Close-up of lit, colorful letter-shaped birthday candles spelling 'HAPPY BIRTHDAY' on a frosted cake against a dark background.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: dark background",
       "objects: birthday cake",
       "objects: letter candles",
@@ -1891,7 +1890,7 @@
     "caption": "A black-and-white promotional group portrait of the band The Avett Brothers, featuring seven members standing in a line against a backdrop of bare, leafless trees. The men are dressed in a mix of tweed blazers, patterned shirts, and suits with ties, while the woman wears a floral dress. Several members wear sunglasses or hats, creating a stylish, vintage aesthetic.",
     "tags": [
       "7 people",
-      "outdoor setting",
+      "Setting: outdoor",
       "bare trees",
       "tweed blazer",
       "sunglasses",
@@ -1903,7 +1902,7 @@
       "group portrait",
       "band photo",
       "The Avett Brothers",
-      "daytime",
+      "Time of Day: daytime",
       "formal wear",
       "standing pose"
     ]
@@ -1911,8 +1910,8 @@
   "pixabay-2605006": {
     "caption": "A group of four young men standing on the concrete rooftop of a dilapidated building, holding cameras and looking out over a suburban landscape with bare trees and houses under an overcast sky.",
     "tags": [
-      "4 people",
-      "outdoor",
+      "People Count: 4",
+      "Setting: outdoor",
       "rooftop",
       "abandoned building",
       "concrete",
@@ -1921,7 +1920,7 @@
       "hoodie",
       "sneakers",
       "overcast",
-      "daytime",
+      "Time of Day: daytime",
       "muted colours",
       "grey sky",
       "brown tones",
@@ -1944,8 +1943,8 @@
       "raised arms",
       "sightseeing",
       "travel",
-      "outdoor",
-      "daytime",
+      "Setting: outdoor",
+      "Time of Day: daytime",
       "backpack",
       "red flower",
       "plaid shirt",
@@ -1959,7 +1958,7 @@
   "pixabay-18176": {
     "caption": "A collage of five empty, light-colored wooden photo frames arranged in a scattered, asymmetrical cluster against a stark white background.",
     "tags": [
-      "people: 0",
+      "People Count: 0",
       "setting: studio",
       "setting: white background",
       "objects: wooden photo frames",
@@ -1977,8 +1976,8 @@
   "pixabay-7440404": {
     "caption": "A shirtless, muscular man with short dark hair and a woman with blonde hair in a black ribbed top embrace intimately against a dark grey studio backdrop, both with eyes closed in a tender pose.",
     "tags": [
-      "2 people",
-      "indoor studio setting",
+      "People Count: 2",
+      "Setting: indoor",
       "dark grey backdrop",
       "shirtless man",
       "muscular torso",
@@ -2001,7 +2000,7 @@
     "tags": [
       "people count: 0",
       "setting: studio",
-      "setting: indoor",
+      "Setting: indoor",
       "objects: chili pepper",
       "objects: red pepper",
       "objects: green stem",
@@ -2033,7 +2032,7 @@
       "dark background",
       "conceptual",
       "digital art",
-      "night"
+      "Time of Day: night"
     ]
   },
   "pixabay-2751468": {
@@ -2059,13 +2058,13 @@
   "pixabay-3205900": {
     "caption": "Silhouetted band members standing on a rooftop ledge, framed by dark tree branches against a bright blue sky with scattered clouds",
     "tags": [
-      "5 people",
-      "outdoor",
+      "People Count: 5",
+      "Setting: outdoor",
       "rooftop",
       "tree branches",
       "blue sky",
       "white clouds",
-      "daytime",
+      "Time of Day: daytime",
       "blue",
       "black",
       "white",
@@ -2081,7 +2080,7 @@
     "tags": [
       "people count: 2",
       "setting: studio",
-      "setting: indoor",
+      "Setting: indoor",
       "objects: blue jeans",
       "objects: black top",
       "objects: underwear waistband",
@@ -2104,12 +2103,12 @@
       "mortarboards",
       "purple sashes",
       "black caps",
-      "outdoors",
+      "Setting: outdoor",
       "park",
       "green grass",
       "posing",
       "formal wear",
-      "daytime",
+      "Time of Day: daytime",
       "celebration",
       "school",
       "standing",
@@ -2119,8 +2118,8 @@
   "pixabay-1317978": {
     "caption": "A vintage sepia-toned family portrait from the late 19th century, featuring a seated woman in a dark dress and hat, a man in a military uniform, and a young child standing between them, all mounted on an ornate cream-colored card with decorative corner flourishes.",
     "tags": [
-      "3 people",
-      "indoor studio setting",
+      "People Count: 3",
+      "Setting: indoor",
       "vintage photograph",
       "sepia tone",
       "military uniform",
@@ -2139,8 +2138,8 @@
   "pixabay-3420931": {
     "caption": "A top-down view of a person's hands typing on a silver laptop with a bright blue screen, set against a background of a grid of blurred black-and-white profile photos.",
     "tags": [
-      "people: 1 (hands only)",
-      "setting: indoor, desk",
+      "People Count: 1",
+      "Setting: indoor",
       "objects: laptop, keyboard, touchpad, digital watch, profile photos",
       "time-of-day: daytime",
       "colour: blue, silver, black, white, skin-tone",
@@ -2163,7 +2162,7 @@
       "group photos",
       "nostalgia",
       "antique photography",
-      "indoor setting",
+      "Setting: indoor",
       "studio portraits"
     ]
   },
@@ -2190,7 +2189,7 @@
       "diverse-people",
       "close-up",
       "photography",
-      "indoor",
+      "Setting: indoor",
       "neutral-lighting",
       "black-and-white-accents",
       "skin-tone",
@@ -2200,8 +2199,8 @@
   "pixabay-4077244": {
     "caption": "A shooter in a woodland camouflage jacket and black beanie aims an AK-47 rifle with a red earplug, while an instructor in a black jacket and tactical headset observes from behind at an outdoor range.",
     "tags": [
-      "2 people",
-      "outdoor shooting range",
+      "People Count: 2",
+      "Setting: outdoor",
       "AK-47 rifle",
       "woodland camouflage jacket",
       "black beanie",
@@ -2209,7 +2208,7 @@
       "black tactical jacket",
       "hearing protection",
       "aiming",
-      "daytime",
+      "Time of Day: daytime",
       "earthy tones",
       "military training"
     ]
@@ -2239,8 +2238,8 @@
     "caption": "A dense digital collage composed of dozens of individual portrait photographs arranged in a grid, showcasing a diverse array of people from various ethnicities, ages, and cultural backgrounds, including individuals in traditional attire like hijabs and business suits.",
     "tags": [
       "people",
-      "indoor",
-      "outdoor",
+      "Setting: indoor",
+      "Setting: outdoor",
       "collage",
       "grid",
       "photograph",
@@ -2305,7 +2304,7 @@
       "portraits",
       "graphic design",
       "conceptual art",
-      "indoor",
+      "Setting: indoor",
       "studio",
       "mixed ethnicity",
       "smiling",
@@ -2328,7 +2327,7 @@
       "various ages",
       "close-up faces",
       "headshots",
-      "indoor and outdoor settings",
+      "Setting: indoor",
       "candid expressions",
       "posed portraits",
       "crowd representation",
@@ -2379,7 +2378,7 @@
       "communication",
       "community",
       "networking",
-      "indoor",
+      "Setting: indoor",
       "artificial lighting"
     ]
   },
@@ -2407,8 +2406,8 @@
       "social connection",
       "community",
       "network",
-      "indoor lighting",
-      "outdoor lighting",
+      "Setting: indoor",
+      "Setting: outdoor",
       "high density",
       "repetitive pattern"
     ]
@@ -2435,7 +2434,7 @@
       "partnership",
       "diversity",
       "conceptual art",
-      "indoor"
+      "Setting: indoor"
     ]
   },
   "pixabay-556811": {
@@ -2451,7 +2450,7 @@
       "perspective view",
       "mixed gender",
       "varied ages",
-      "indoor and outdoor settings",
+      "Setting: indoor",
       "neutral background",
       "community representation",
       "human diversity",
@@ -2462,7 +2461,7 @@
     "caption": "A black and white close-up of a traditional ceremony where a woman's hand, adorned with intricate henna and a ring, pours a stream of liquid from a small vessel into a metal bowl held by a man in a suit with a patterned cufflink.",
     "tags": [
       "people count: 2",
-      "setting: indoor ceremony",
+      "Setting: indoor",
       "objects: henna, metal bowl, liquid stream, suit cuff, ring, embroidered sleeve",
       "time-of-day: unknown",
       "colour: monochrome",
@@ -2476,8 +2475,8 @@
   "pixabay-2753253": {
     "caption": "A flock of black cormorants perched on the gnarled, leafless branches of a large fallen tree extending into a calm lake, with distant hills visible under an overcast sky.",
     "tags": [
-      "people: 0",
-      "setting: outdoor lake",
+      "People Count: 0",
+      "Setting: outdoor",
       "setting: nature",
       "objects: cormorants",
       "objects: dead tree",
@@ -2494,8 +2493,8 @@
   "pixabay-3038243": {
     "caption": "A brindle tabby kitten with wide, curious eyes sits on a wooden floor, looking up between a blue curtain and a yellow upholstered chair.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "kitten",
       "brindle tabby",
       "wooden floor",
@@ -2512,13 +2511,13 @@
   "pixabay-4988985": {
     "caption": "A smiling Pembroke Welsh Corgi with large upright ears and a green collar lies on a sunlit green lawn, captured in a collage of close-up and wide shots.",
     "tags": [
-      "1 person",
-      "outdoor",
+      "People Count: 1",
+      "Setting: outdoor",
       "grass",
       "dog",
       "corgi",
       "collar",
-      "daytime",
+      "Time of Day: daytime",
       "green",
       "white",
       "tan",
@@ -2530,8 +2529,8 @@
   "pixabay-5855647": {
     "caption": "Extreme macro close-up of a tabby cat's face, highlighting the texture of individual whiskers, the vertical slit of a green iris, and the fine details of brown and white fur.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "objects: cat, whiskers, iris, fur, nose",
       "time-of-day: unknown",
       "colour: green, white, brown, black, pink",
@@ -2541,14 +2540,14 @@
   "pixabay-5021084": {
     "caption": "A tan dog rests its head on a white pillow, partially covered by a grey quilted blanket with beige stitching, in a cozy indoor setting.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "bedroom",
       "dog",
       "blanket",
       "pillow",
       "bed",
-      "daytime",
+      "Time of Day: daytime",
       "grey",
       "tan",
       "white",
@@ -2560,8 +2559,8 @@
   "pixabay-9548923": {
     "caption": "A close-up portrait of a brown Australian Shepherd with striking blue eyes and tan facial markings, set against a soft, blurred outdoor background.",
     "tags": [
-      "1 person",
-      "outdoor setting",
+      "People Count: 1",
+      "Setting: outdoor",
       "dog",
       "australian shepherd",
       "blue eyes",
@@ -2569,7 +2568,7 @@
       "tan markings",
       "portrait",
       "close-up",
-      "daytime",
+      "Time of Day: daytime",
       "brown",
       "blue",
       "tan",
@@ -2580,10 +2579,10 @@
   "pixabay-8361048": {
     "caption": "A tabby cat with green eyes and white chest fur peers out from the V-shaped crotch of a large, textured tree trunk.",
     "tags": [
-      "1 person",
-      "outdoor setting",
+      "People Count: 1",
+      "Setting: outdoor",
       "tree bark",
-      "daytime",
+      "Time of Day: daytime",
       "earthy tones",
       "green eyes",
       "white fur",
@@ -2598,11 +2597,11 @@
   "pixabay-4712141": {
     "caption": "A close-up profile of a male lion with a thick, golden-brown mane, gazing intently to the right against a blurred background of reddish rock and green moss.",
     "tags": [
-      "1 person",
-      "outdoor setting",
+      "People Count: 1",
+      "Setting: outdoor",
       "rock formation",
       "mossy stone",
-      "daytime",
+      "Time of Day: daytime",
       "golden-brown",
       "reddish-brown",
       "green",
@@ -2617,12 +2616,11 @@
   "pixabay-4732766": {
     "caption": "A collage of close-up portraits featuring a young, long-haired golden retriever puppy resting its head on a dark red surface, highlighting its soft fur, pink nose, and expressive green eyes.",
     "tags": [
-      "people: 0",
-      "setting: indoor",
+      "People Count: 0",
+      "Setting: indoor",
       "setting: close-up",
       "objects: red cushion",
       "objects: dog fur",
-      "time-of-day: indoor lighting",
       "colour: golden brown",
       "colour: maroon",
       "colour: green eyes",
@@ -2638,7 +2636,7 @@
     "caption": "A collage of four close-up shots featuring a black and white Siberian Husky, highlighting its intense blue eyes, erect ears, and facial markings in cool, low-light tones.",
     "tags": [
       "1 animal",
-      "indoor setting",
+      "Setting: indoor",
       "shallow depth of field",
       "black and white fur",
       "blue eyes",
@@ -2658,8 +2656,8 @@
   "pixabay-5021085": {
     "caption": "A close-up of a brown dog sleeping peacefully with its head resting on a white cushion, partially covered by a textured grey wool blanket with yellow stitching.",
     "tags": [
-      "1 person",
-      "indoor",
+      "People Count: 1",
+      "Setting: indoor",
       "bedroom",
       "dog",
       "mammal",
@@ -2667,7 +2665,7 @@
       "blanket",
       "wool",
       "cushion",
-      "daytime",
+      "Time of Day: daytime",
       "grey",
       "brown",
       "yellow",
@@ -2679,14 +2677,14 @@
   "pixabay-8781844": {
     "caption": "A fluffy apricot and white puppy with a curly coat walks on a paved path, holding a pink leash, with a close-up view of its dark eyes and nose.",
     "tags": [
-      "1 person",
-      "outdoor",
+      "People Count: 1",
+      "Setting: outdoor",
       "puppy",
       "dog",
       "leash",
       "paved path",
       "trees",
-      "daytime",
+      "Time of Day: daytime",
       "apricot",
       "white",
       "walking",
@@ -2696,15 +2694,14 @@
   "pixabay-7245850": {
     "caption": "A curious tabby kitten with blue eyes peeks through tall, vibrant green grass in a sunlit outdoor setting.",
     "tags": [
-      "1 person",
-      "outdoor",
+      "People Count: 1",
+      "Setting: outdoor",
       "nature",
       "kitten",
       "tabby cat",
       "grass",
       "green",
-      "daytime",
-      "nature",
+      "Time of Day: daytime",
       "pet",
       "animal",
       "exploring",
@@ -2714,8 +2711,8 @@
   "pixabay-4988986": {
     "caption": "A Pembroke Welsh Corgi with tan and white fur sits on a grassy lawn, wearing a yellow collar, with a wooden fence and trees in the background during golden hour.",
     "tags": [
-      "1 person",
-      "outdoor",
+      "People Count: 1",
+      "Setting: outdoor",
       "grass",
       "fence",
       "trees",

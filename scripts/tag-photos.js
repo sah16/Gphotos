@@ -16,13 +16,15 @@ const TAGS_PATH = path.join(process.cwd(), 'data', 'tags.json');
 
 async function getGroqTags(base64Image, originalTags, theme) {
   const prompt = `You are an AI photo tagger. I am providing an image.
-Please provide a caption and structured attribute tags (people count, setting, objects, time-of-day, colour, activity).
-Be specific and descriptive. Avoid generic tags.
-
-Format your response exactly as JSON:
+Please provide a caption and structured attribute tags.
+CRITICAL RULES:
+1. You MUST use one fixed tag schema across all photos. Tags MUST be prefixed with their category exactly as follows: "People Count: X", "Setting: X", "Time of Day: X", "Colour: X", "Action: X", "Object: X".
+2. For people count, strictly use exact numbers, e.g. "People Count: 0", "People Count: 1", "People Count: 2", "People Count: 3+". Do not use "0 people" or "none".
+3. Extract **specific actions and objects** in the scene (e.g. "Action: blowing out candles", "Object: birthday cake"). Do NOT just provide generic scene descriptors. This is critical for search disambiguation!
+4. Format your response exactly as JSON:
 {
   "caption": "A brief, descriptive caption of the photo",
-  "tags": ["tag1", "tag2", "tag3"]
+  "tags": ["People Count: 2", "Setting: indoor", "Action: eating cake", "Object: balloon", "Time of Day: evening", "Colour: red"]
 }
 
 Context (use this to help identify themes if relevant):

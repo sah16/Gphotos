@@ -36,7 +36,12 @@ export function getTopChips(candidatePool: Photo[], selectedChips: string[] = []
     if (count > poolSize * 0.95 || count <= 1) continue;
 
     const splitRatio = count / poolSize;
-    const splitScore = 0.5 - Math.abs(0.5 - splitRatio);
+    let splitScore = 0.5 - Math.abs(0.5 - splitRatio);
+
+    // Boost Action and Object chips so they rank higher than generic scene-level descriptors
+    if (tag.startsWith('action:') || tag.startsWith('object:')) {
+      splitScore += 0.2; 
+    }
 
     validChips.push({ label: tag, count, splitScore });
   }

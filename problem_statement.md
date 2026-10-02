@@ -26,7 +26,13 @@ page. All UI described below (§3 onward) renders inside this fixed
 viewport, scrolling within it if content overflows. Do not add real
 mobile-specific behavior (touch gestures, viewport meta tweaks, etc.)
 beyond what's already specified — this is a visual frame around the same
-web app, nothing more.
+web app, nothing more. **The phone frame must always fit fully within
+the visible browser viewport on page load, with no page-level scrolling
+required to see the whole frame** — size it using viewport-relative
+units with a sensible max size, scaling down proportionally on smaller
+windows rather than overflowing. Scrolling should only ever occur for
+content *inside* the phone's screen area, never for the frame itself
+relative to the browser window.
 
 ## 3. UI placement (see reference screenshots)
 
@@ -60,6 +66,21 @@ web app, nothing more.
   control to collapse back down.
 - Rank chips by how evenly they split the current candidate pool (a chip
   matching ~95% or ~2% of candidates is low-value and should rank low).
+- Specific actions and objects (e.g. "blowing out candles," "holding a
+  cake," "wearing a party hat") must be tagged and surfaced as chips,
+  not just generic scene-level attributes (setting, lighting, people
+  count, colour). A distinctive action/object is usually what a user
+  actually remembers and searches by — if the tagging pipeline only
+  produces generic scene descriptors, the most identifying detail in a
+  photo (e.g. a child blowing out birthday candles) can end up with no
+  chip that describes it at all, even while it's the clear best match.
+  When ranking, prefer specific action/object chips over generic
+  scene-level chips at similar pool-split quality.
+- Chip labels must be normalized before counting/ranking — equivalent
+  attributes (e.g. "People: 0" and "0 people") must be merged into a
+  single canonical label, never shown as separate chips with separate
+  counts. Define one consistent tag vocabulary/schema at the tagging
+  step (see §6) so this doesn't need fixing downstream.
 - Multiple chips can be selected at once and compose as additive clues.
 - A result-count line above the grid states the current result count and
   how it was reached, e.g. "48 loosely matching results" before any clue
@@ -69,6 +90,11 @@ web app, nothing more.
   result.
 - A visible fallback ("Nothing fits? Type your own clue") must always be
   available — chips should never be the only path forward.
+- Every search input (the initial query box and the free-text fallback)
+  must have a visible submit button (e.g. a search/magnifying-glass icon
+  button) alongside it — submitting must not rely solely on the user
+  knowing to press Enter, though Enter-to-submit should still work as a
+  secondary path.
 - The top-ranked/best-matching result in a narrowed set gets a subtle
   "best match" indicator.
 - Selecting a chip triggers a fresh retrieval call (query + chip terms),

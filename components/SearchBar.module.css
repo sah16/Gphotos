@@ -33,7 +33,7 @@
   background: transparent;
   border: none;
   color: var(--foreground);
-  padding: 0 16px 0 48px;
+  padding: 0 48px 0 48px;
   font-size: 1rem;
 }
 
@@ -43,4 +43,29 @@
 
 .input::placeholder {
   color: #9aa0a6;
+}
+
+.submitBtn {
+  position: absolute;
+  right: 8px;
+  background: #3c4043;
+  color: #e8eaed;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background: #4a4e51;
+}
+
+.submitBtn:focus {
+  outline: 2px solid #8ab4f8;
+  outline-offset: 2px;
 }

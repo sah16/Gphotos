@@ -41,12 +41,13 @@ body {
 }
 
 .device-frame {
-  width: 375px; /* typical phone width */
-  height: 812px; /* typical phone height, aspect ratio ~ 9:19.5 */
+  --bezel: clamp(6px, min(1.5vh, 1.5vw), 14px);
+  width: min(375px, 90vw, calc(90vh * 375 / 812));
+  aspect-ratio: 375 / 812;
   background-color: var(--background);
-  border-radius: 48px; /* rounded corners */
-  border: 14px solid #000000; /* phone bezel */
-  box-shadow: 0 0 0 2px #333, 0 20px 40px rgba(0,0,0,0.4); /* subtle edge and drop shadow */
+  border-radius: clamp(24px, min(5vh, 5vw), 48px);
+  border: var(--bezel) solid #000000;
+  box-shadow: 0 0 0 2px #333, 0 20px 40px rgba(0,0,0,0.4);
   position: relative;
   box-sizing: content-box;
 }
@@ -54,7 +55,7 @@ body {
 .device-screen {
   width: 100%;
   height: 100%;
-  border-radius: 34px; /* match inner curve */
+  border-radius: clamp(16px, min(3.5vh, 3.5vw), 34px);
   overflow: hidden; /* clip the content to the rounded corners */
   position: relative;
   background-color: var(--background);
@@ -63,13 +64,13 @@ body {
 /* Dynamic island / Notch */
 .device-notch {
   position: absolute;
-  top: 14px;
+  top: var(--bezel);
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 35px;
+  width: 32%;
+  height: 4.3%;
   background-color: #000000;
-  border-radius: 20px;
+  border-radius: clamp(10px, 2vh, 20px);
   z-index: 9999;
 }
 
@@ -77,40 +78,37 @@ body {
 .device-button {
   position: absolute;
   background-color: #333;
+  width: 2px;
 }
 
 .device-button-mute {
-  left: -16px;
-  top: 100px;
-  width: 2px;
-  height: 30px;
+  left: calc(-1 * var(--bezel) - 2px);
+  top: 12.3%;
+  height: 3.7%;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
 .device-button-vol-up {
-  left: -16px;
-  top: 160px;
-  width: 2px;
-  height: 50px;
+  left: calc(-1 * var(--bezel) - 2px);
+  top: 19.7%;
+  height: 6.1%;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
 .device-button-vol-down {
-  left: -16px;
-  top: 230px;
-  width: 2px;
-  height: 50px;
+  left: calc(-1 * var(--bezel) - 2px);
+  top: 28.3%;
+  height: 6.1%;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
 
 .device-button-power {
-  right: -16px;
-  top: 180px;
-  width: 2px;
-  height: 70px;
+  right: calc(-1 * var(--bezel) - 2px);
+  top: 22.1%;
+  height: 8.6%;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }

@@ -2,13 +2,20 @@
 
 async function testHF() {
   const response = await fetch(
-    "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2",
+    "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ inputs: "cafe image", options: { wait_for_model: true } }),
     }
   );
+  
+  if (!response.ok) {
+    const text = await response.text();
+    console.log("Status:", response.status);
+    console.log("Response:", text);
+    return;
+  }
   
   const data = await response.json();
   console.log("Response type:", typeof data);

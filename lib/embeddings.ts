@@ -1,6 +1,6 @@
 export async function getEmbedding(text: string): Promise<number[]> {
   const hfToken = process.env.HF_API_KEY;
-  const url = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2";
+  const url = "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction";
   
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',

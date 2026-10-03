@@ -1,16 +1,22 @@
 .container {
-  display: none;
-  position: fixed;
-  right: max(40px, calc(50vw - 420px)); /* Positions it reasonably right of the phone frame */
-  top: 50%;
-  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
   z-index: 100;
 }
 
-/* Show only on desktop/wide viewports */
+/* Show fixed on desktop/wide viewports */
 @media (min-width: 1000px) {
   .container {
-    display: block;
+    position: fixed;
+    right: max(40px, calc(50vw - 420px)); /* Positions it reasonably right of the phone frame */
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    margin: 0;
   }
 }
 

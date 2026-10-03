@@ -15,7 +15,7 @@ than only at the very end.
 - Initialize a Next.js project with the folder structure from
   `architecture.md` §4.
 - Set up `.env.local.example` with placeholders: `PEXELS_API_KEY`,
-  `UNSPLASH_ACCESS_KEY`, `GROQ_API_KEY`.
+  `UNSPLASH_ACCESS_KEY`, `GROQ_API_KEY`, `HF_API_KEY`.
 - Connect the repo to a new Vercel project (framework auto-detected).
 - Deploy the untouched Next.js starter page to confirm the pipeline
   (repo → Vercel → public URL) works before any custom code is added.
@@ -78,7 +78,8 @@ artifact every later phase depends on.
 - Manually spot-check ~15-20 entries for caption/tag quality before
   moving on — bad tags here silently break chip quality later.
 
-**Inputs needed:** `GROQ_API_KEY`; Phase 2's manifest and images.
+**Inputs needed:** `GROQ_API_KEY`, `HF_API_KEY`; Phase 2's manifest and
+images.
 
 **Exit criteria:** `/data/photos.json` exists, contains one well-formed
 record per photo, and spot-checked entries have plausible, specific
@@ -153,7 +154,8 @@ local dev environment (`next dev`), not yet deployed.
 §8 (Definition of done), ready for 1-3 real users to test.
 
 **Tasks:**
-- Set `GROQ_API_KEY` in the Vercel project's environment variables
+- Set `GROQ_API_KEY` and `HF_API_KEY` in the Vercel project's
+  environment variables
   (`PIXABAY_API_KEY`/`UNSPLASH_ACCESS_KEY` are not needed in production —
   seeding is a local, one-time step).
 - Deploy to Vercel; confirm `/data/photos.json` and `/public/photos` are

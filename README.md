@@ -25,6 +25,8 @@ Read them in that order before making changes.
   optional, approval-gated — used only as a secondary photo source if
   granted)
 - A [Groq API key](https://console.groq.com/) (free)
+- A [Hugging Face API token](https://huggingface.co/settings/tokens)
+  (free — create a fine-grained token scoped to "Inference" only)
 
 ## Setup
 
@@ -37,7 +39,8 @@ Read them in that order before making changes.
    cp .env.local.example .env.local
    ```
    Then edit `.env.local` and paste in real values for `PIXABAY_API_KEY`,
-   `UNSPLASH_ACCESS_KEY` (if granted), and `GROQ_API_KEY`. This file is
+   `UNSPLASH_ACCESS_KEY` (if granted), `GROQ_API_KEY`, and `HF_API_KEY`.
+   This file is
    git-ignored — never commit real keys.
 
 3. Run the offline pipeline once, locally, to build the photo corpus and
@@ -65,7 +68,8 @@ Read them in that order before making changes.
 2. Import the repo into Vercel (framework preset: Next.js, auto-
    detected).
 3. In the Vercel project's Environment Variables settings, add
-   `GROQ_API_KEY` (needed at runtime for live query/chip scoring).
+   `GROQ_API_KEY` (needed at runtime for live query/chip scoring) and
+   `HF_API_KEY` (needed at runtime for live query embedding).
    `PIXABAY_API_KEY` / `UNSPLASH_ACCESS_KEY` are **not** needed in
    production — they're only used by the local seeding scripts, and
    `/data/photos.json` + `/public/photos` are already committed.

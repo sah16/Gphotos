@@ -96,10 +96,45 @@ deploy — not part of the deployed app)
   `people_count` of 0 must always be represented identically, not
   sometimes as "People: 0" and sometimes as "0 people") — this prevents
   duplicate/inconsistent chips downstream in chip ranking (§3.1).
-- `scripts/embed-photos.js` — builds a similarity representation per
-  photo from its caption/tags (a real embedding if a Groq or other free
-  embedding endpoint is available; otherwise a TF-IDF/keyword-overlap
-  vector is an acceptable substitute at this corpus size).
+- `scripts/embed-photos.js` — builds a real embedding per photo from its
+  caption/tags via the **Hugging Face Inference API**
+  (`sentence-transformers/all-MiniLM-L6-v2`, 384-dim vectors), called
+  over plain HTTP. (A TF-IDF/keyword-overlap fallback was tried first
+  and rejected — it matched on generic co-occurring words rather than
+  real meaning, e.g. scoring an unrelated photo highly for a "cafe"
+  query just because its caption contained the word "image.")
+  - Endpoint: `POST
+    https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction`
+    — note this is **not** the older `api-inference.huggingface.co`
+    hostname, which Hugging Face retired in a 2025 migration to a
+    unified router; that old hostname no longer resolves (`ENOTFOUND`).
+    If this breaks again, check Hugging Face's current docs for the
+    router URL pattern before assuming the code is at fault.
+  - Auth: `Authorization: Bearer ${HF_API_KEY}` header (fine-grained
+    token, scoped to "Inference" only).
+  - **The live query embedding (§3.1, step 3) must use this exact same
+    model** — a mismatched model produces a different vector space and
+    silently breaks cosine similarity (no error thrown, just
+    meaningless scores). If the embedding model ever changes, the full
+    corpus must be re-embedded, not just the live query path.
+  - An earlier approach ran this model locally in-process via
+    `@xenova/transformers` instead of calling it over HTTP. That was
+    abandoned — it fails on Vercel's serverless environment with
+    filesystem/native-binary errors (`ENOENT` on model cache writes, or
+    `libonnxruntime.so.1` not found), a documented, common
+    incompatibility between that library and Vercel, not specific to
+    this project. **Do not reintroduce a locally-run embedding model in
+    the deployed app.**
+  - This is Hugging Face's free serverless tier: rate-limited, no
+    published fixed quota, no SLA — Hugging Face's own docs advise
+    against relying on it for production/customer-facing use. Adequate
+    for this MVP's small-scale grading/demo use, but the code must
+    handle 429 rate-limit responses gracefully (retry/backoff or a
+    clear error state), and the UI must show a loading state while
+    waiting, since a request after a period of inactivity can be
+    noticeably slower (the model can go idle on Hugging Face's side —
+    independent of, and not fixed by, Vercel's own cold start
+    behavior).
 - `scripts/build-dataset.js` — merges the above into the final
   `/data/photos.json`.
 - These scripts are run manually (`node scripts/...`) during setup, not
@@ -111,6 +146,9 @@ deploy — not part of the deployed app)
 - **Pixabay API / Unsplash API** — offline only, photo sourcing.
 - **Groq API** — offline (vision tagging) and online (live query
   normalization / chip-relevance scoring at request time).
+- **Hugging Face Inference API** — offline (corpus embeddings) and
+  online (live query embedding at request time, `/api/search` and
+  `/api/refine`) — see §2.4 for endpoint, auth, and known limitations.
 
 ## 3. Request-time sequence
 
@@ -216,7 +254,7 @@ deploy — not part of the deployed app)
   embed-photos.js
   build-dataset.js
 /public/photos                # downloaded demo images
-.env.local.example            # PEXELS_API_KEY, UNSPLASH_ACCESS_KEY, GROQ_API_KEY placeholders
+.env.local.example            # PEXELS_API_KEY, UNSPLASH_ACCESS_KEY, GROQ_API_KEY, HF_API_KEY placeholders
 ```
 
 ## 5. Data models (canonical — matches `problem_statement.md` §7)
@@ -247,7 +285,8 @@ the frontend as-is.
 - One Vercel project, connected to the repo. Framework preset: Next.js
   (auto-detected).
 - Environment variables set in Vercel dashboard: `GROQ_API_KEY` (needed
-  at runtime for live query/chip scoring), `PIXABAY_API_KEY` /
+  at runtime for live query/chip scoring), `HF_API_KEY` (needed at
+  runtime for live query embedding — see §2.4), `PIXABAY_API_KEY` /
   `UNSPLASH_ACCESS_KEY` (only needed locally, for re-running the offline
   seeding scripts — not required by the deployed app itself, since
   `/data/photos.json` and `/public/photos` are already committed).

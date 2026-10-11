@@ -24,7 +24,7 @@ export function retrievePhotos(queryEmbedding: number[]): Photo[] {
     score: scorePhoto(photo, queryEmbedding)
   }));
 
-  const THRESHOLD = 0.25; // Cosine similarity threshold (adjust as needed based on model)
+  const THRESHOLD = 0.58; // Calibrated for Gemini embeddings (filters out unrelated clusters like birthday/beach)
   
   const hasClues = queryEmbedding && queryEmbedding.length > 0;
   const candidates = hasClues 

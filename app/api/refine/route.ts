@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     }
 
     // 3. Recompute chips from the filtered pool
-    const topChips = getTopChips(filteredPool, selectedChips);
+    const topChips = getTopChips(filteredPool, selectedChips, 20, query);
 
     const visibleResults = filteredPool.slice(0, 12).map((p, index) => {
       // Create a copy to remove embedding

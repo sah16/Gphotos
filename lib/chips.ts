@@ -5,9 +5,13 @@ export type Chip = {
   matchCount: number;
 };
 
-export function getTopChips(candidatePool: Photo[], selectedChips: string[] = [], topN: number = 20): Chip[] {
+export function getTopChips(candidatePool: Photo[], selectedChips: string[] = [], topN: number = 20, query: string = ''): Chip[] {
   const poolSize = candidatePool.length;
   if (poolSize === 0) return [];
+
+  const queryTokens = new Set(
+    (query.toLowerCase().match(/\b[a-z0-9]+\b/g) || []).filter(w => w.length > 2)
+  );
 
   const tagCounts = new Map<string, number>();
   const tagOriginalCase = new Map<string, string>();
@@ -34,6 +38,15 @@ export function getTopChips(candidatePool: Photo[], selectedChips: string[] = []
   for (const [tag, count] of tagCounts.entries()) {
     if (selectedSet.has(tag)) continue;
     if (count > poolSize * 0.95 || count <= 1) continue;
+
+    // Filter out chips whose words are entirely already present in the user's query
+    if (queryTokens.size > 0) {
+      const payload = tag.includes(':') ? tag.split(':')[1].trim() : tag;
+      const tagTokens = (payload.toLowerCase().match(/\b[a-z0-9]+\b/g) || []).filter(w => w.length > 2);
+      if (tagTokens.length > 0 && tagTokens.every(t => queryTokens.has(t))) {
+        continue;
+      }
+    }
 
     const splitRatio = count / poolSize;
     let splitScore = 0.5 - Math.abs(0.5 - splitRatio);

@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     const queryEmbedding = await getEmbedding(query);
     const candidatePool = retrievePhotos(queryEmbedding);
-    const topChips = getTopChips(candidatePool, []);
+    const topChips = getTopChips(candidatePool, [], 20, query);
 
     const visibleResults = candidatePool.slice(0, 12).map((p, index) => {
       // Create a copy to remove embedding

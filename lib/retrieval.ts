@@ -24,14 +24,24 @@ export function retrievePhotos(queryEmbedding: number[]): Photo[] {
     score: scorePhoto(photo, queryEmbedding)
   }));
 
-  const THRESHOLD = 0.58; // Calibrated for Gemini embeddings (filters out unrelated clusters like birthday/beach)
-  
   const hasClues = queryEmbedding && queryEmbedding.length > 0;
-  const candidates = hasClues 
-    ? scoredPhotos.filter(p => p.score >= THRESHOLD)
-    : scoredPhotos.slice(0, 50); // fallback if no query
+  if (!hasClues) {
+    return (photosData as Photo[]).slice(0, 50);
+  }
 
-  candidates.sort((a, b) => b.score - a.score);
+  scoredPhotos.sort((a, b) => b.score - a.score);
+
+  const topScore = scoredPhotos[0]?.score || 0;
+  const ABSOLUTE_MIN = 0.50; // Safety floor for relevance
+  if (topScore < ABSOLUTE_MIN) {
+    return [];
+  }
+
+  // Adaptive cutoff: keep photos within 0.08 margin of the best match
+  const MARGIN = 0.08;
+  const cutoff = Math.max(ABSOLUTE_MIN, topScore - MARGIN);
+
+  const candidates = scoredPhotos.filter(p => p.score >= cutoff);
 
   return candidates.slice(0, 50).map(c => c.photo);
 }
